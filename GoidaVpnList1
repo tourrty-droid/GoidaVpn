@@ -1,11 +1,10 @@
 # profile-title: впн ааа стрщно
 # profile-update-interval: 1
+# мяу
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
 vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@95.85.240.86:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=ads.x5.ru&pbk=5IH4GxRn58hemmfY2nr_cETdTXwFC1PHngCLY2OiWz8&sid=1a7f3b9e2c40&fp=chrome&type=tcp#🇳🇱 Нидерланды 
 vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@94.249.176.68:443?encryption=none&security=tls&sni=spain1.potatosubge20.org&fp=chrome&alpn=h2,http/1.1&type=xhttp&mode=auto&host=spain1.potatosubge20.org&path=%2Fxhttp#🇪🇸 Испания 
-vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 Нидерланды 
-vless://ab268dc7-510f-4fb9-ace4-b7305a59c7bb@78.17.103.57.blanesik.space:443?type=grpc&headerType=none&security=tls&encryption=none&sni=78.17.103.57.blanesik.space&fp=safari&alpn=h2&serviceName=%2Fsequre%2Fgrpc&insecure=0#🇩🇪 Германия 
+vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 Нидерланды  
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2↓
 hysteria2://b880e510-8196-44bb-b715-781a9461b4a0@aestheticperforator.ru:8443?headerType=none&encryption=none&sni=aestheticperforator.ru&insecure=0#🇵🇱 Польша 
-hysteria2://10550754-cf62-3d3b-ba6a-50be27a275d7@185.106.96.231:443?security=tls&sni=s559.ccgfw.top#🇺🇸 Соединёные Штаты  
