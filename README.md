@@ -11,7 +11,7 @@
 
 | Платформа | Статус | Ссылка |
 | :--- | :--- | :--- |
-| **Android / iOS** | 🟢 Работает (Mobile) | [Скачать / Использовать](https://github.com) |
+| **Android / iOS** | 🟢 Работает (Mobile) | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_mobile) |
 | **Windows / macOS / Linux** | 🛠 В разработке (PC) | *Делаем WhiteList и сервера hysteria2* |
 
 ---
