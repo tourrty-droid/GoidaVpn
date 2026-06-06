@@ -6,10 +6,11 @@
 # гав
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
+vless://ab268dc7-510f-4fb9-ace4-b7305a59c7bb@194.238.79.150.fwqfw783rg2dad.website:443?security=tls&type=ws&path=%2Fsequre%2Fws&sni=194.238.79.150.fwqfw783rg2dad.website&fp=chrome#🇪🇺 Авто-выбор (📺Ютуб с рекламой)
 vless://785c7771-8d7f-48ca-bbc2-1a22e360d4d0@2.26.88.118:8443?type=grpc&headerType=none&security=reality&encryption=none&fp=chrome&pbk=TdT90qbeyM7WO0QCztOhKDGKOi2qaFFif0hO0cfK1E4&sid=ea1058117be12087&spx=%2F&serviceName=max.ru#🇱🇻 Латвия (📺Ютуб с рекламой)
-vless://ab268dc7-510f-4fb9-ace4-b7305a59c7bb@194.238.79.150.fwqfw783rg2dad.website:443?security=tls&type=ws&path=%2Fsequre%2Fws&sni=194.238.79.150.fwqfw783rg2dad.website&fp=chrome#🇪🇺 Авто-выбор | Герм, Корея, США | (📺Ютуб с рекламой)
-vless://347a56c2-a453-4b32-86cd-7522943df88c@104.165.244.183:50095?type=tcp&headerType=none&security=reality&encryption=none&sni=cdn.jsdelivr.net&fp=qq&pbk=vZuBWF0YzlKI0fJWxU6hmOLHHQ5Qb1kf35HbZDcFCH4&sid=f2e1861359398ff2&flow=xtls-rprx-vision#🇵🇱 Польша (Тестируем)
-vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 Нидерланды  
+vless://347a56c2-a453-4b32-86cd-7522943df88c@104.165.244.183:50095?type=tcp&headerType=none&security=reality&encryption=none&sni=cdn.jsdelivr.net&fp=qq&pbk=vZuBWF0YzlKI0fJWxU6hmOLHHQ5Qb1kf35HbZDcFCH4&sid=f2e1861359398ff2&flow=xtls-rprx-vision#🇵🇱 Польша (Резерв)
+vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 Нидерланды (Резерв)
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
 hysteria2://b880e510-8196-44bb-b715-781a9461b4a0@de1.synthori.space:443?headerType=none&encryption=none&sni=de1.synthori.space&insecure=0#🇩🇪 Германия (📺Ютуб без рекламы)
 hysteria2://b880e510-8196-44bb-b715-781a9461b4a0@aestheticperforator.ru:8443?headerType=none&encryption=none&sni=aestheticperforator.ru&insecure=0#🇵🇱 Польша (📺Ютуб с рекламой)
+hysteria2://1c65bee4-bc54-364c-8988-6a5912fda891@150.129.10.140:443?sni=u723829us614.ccgfw.online&alpn=h3&mport=30000-32000&hopinterval=30s#🇳🇱 Нидерланды
