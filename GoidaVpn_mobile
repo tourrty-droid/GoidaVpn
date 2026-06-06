@@ -6,9 +6,9 @@
 # гав
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
-vless://17451fec-af94-4715-8c2f-7f6839130d0a@china-node.appbyte.online:2040?type=tcp&security=reality&sni=apple.com&fp=ios&flow=xtls-rprx-vision&pbk=LidllyozUeeSbuzJ0ZfieGoy8YjVzqXX9H2m9whPaG0&sid=53197c66aef53c44#🇬🇧 Великобритания (Тестируем)
+vless://785c7771-8d7f-48ca-bbc2-1a22e360d4d0@2.26.88.118:8443?type=grpc&headerType=none&security=reality&encryption=none&fp=chrome&pbk=TdT90qbeyM7WO0QCztOhKDGKOi2qaFFif0hO0cfK1E4&sid=ea1058117be12087&spx=%2F&serviceName=max.ru#🇱🇻 Латвия (Тестируем)
 vless://35762c02-ff2b-4526-b41b-e96e5d99528b@151.241.228.254:34754?encryption=none&flow=xtls-rprx-vision&fp=&pbk=eMijZKuJlNEciXbhyzdbewk-ot_JLMZVaA42bxKFcBM&security=reality&sid=c9eb0359fac0c345&sni=yahoo.com&type=tcp#🇫🇷 Франция (Иногда работает)
-vless://6b309255-c7cb-4897-bc32-a68641bba93b@fi1.coconutstrip.co:443?type=tcp&security=reality&sni=fi1.coconutstrip.co&fp=chrome&flow=xtls-rprx-vision&pbk=EXH3lVUhdfuzyhR_pgSqx3w50jGeXpjOLE8Vwiiy0xc#🇨🇾 Кипр (Тестируем
+vless://6b309255-c7cb-4897-bc32-a68641bba93b@fi1.coconutstrip.co:443?type=tcp&security=reality&sni=fi1.coconutstrip.co&fp=chrome&flow=xtls-rprx-vision&pbk=EXH3lVUhdfuzyhR_pgSqx3w50jGeXpjOLE8Vwiiy0xc#🇨🇦 Канада (Тестируем)
 vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 Нидерланды  
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
 hysteria2://b880e510-8196-44bb-b715-781a9461b4a0@de1.synthori.space:443?headerType=none&encryption=none&sni=de1.synthori.space&insecure=0#🇩🇪 Германия (📺Ютуб без рекламы)
