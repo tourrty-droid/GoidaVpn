@@ -11,5 +11,5 @@ your path to freedom in the real world.
 
 | Platform | Link / Status |
 | :--- | :--- |
-| <img src="https://googleapis.com" width="16" height="16" alt="Android"> **Mobile** | [Download Mobile Version](https://github.com) |
+| <img src="https://googleapis.com" width="16" height="16" alt="Android"> **Mobile** | [Click me!!](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_mobile) |
 | <img src="https://wikimedia.org" width="16" height="16" alt="Windows"> **PC** | 🛠️ In development (*We're trying to make this much faster*) |
