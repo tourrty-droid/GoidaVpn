@@ -6,7 +6,7 @@
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
 vless://d2ce0b49-2b2c-46f6-9b43-4829d0075654@white77.alexanderoff.ru:1240?type=tcp&headerType=none&security=none&encryption=none#🇸🇪 Швеция (📺Ютуб без рекламы)
-vless://1c65bee4-bc54-364c-8988-6a5912fda891@82.47.22.163:443?encryption=none&type=tcp&headerType=&fp=&host=s501.okgfw.top&path=&flow=xtls-rprx-vision&security=tls&sni=u723829us501.okgfw.top&serviceName=&mode=&alpn=#🇺🇸 Соединёные Штаты 
+vless://785c7771-8d7f-48ca-bbc2-1a22e360d4d0@2.26.88.118:8443?type=grpc&headerType=none&security=reality&encryption=none&fp=chrome&pbk=TdT90qbeyM7WO0QCztOhKDGKOi2qaFFif0hO0cfK1E4&sid=ea1058117be12087&spx=%2F&serviceName=max.ru#🇱🇻 Латвия
 vless://a2415a12-3f92-4636-9823-9828d3ceb818@72.56.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#🇳🇱 Нидерланды  
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
 hysteria2://b880e510-8196-44bb-b715-781a9461b4a0@de1.synthori.space:443?headerType=none&encryption=none&sni=de1.synthori.space&insecure=0#🇩🇪 Германия (📺Ютуб без рекламы)
