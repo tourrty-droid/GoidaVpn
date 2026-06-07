@@ -4,11 +4,13 @@
 #announce: ⚫ GoidaVpn Status: В атаке ркн уже чиним ⚫  Чаще нажимайте Пинг
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
-vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@147.45.50.243:1443?encryption=none&security=reality&type=xhttp&sni=gateway.icloud.com&fp=chrome&pbk=ZMvMtsHKNd39qVM9CuPLMEXUL19ViL4Qqqk1y5mMjko&sid=a1b2c3d4&mode=auto#🇳🇱 Нидерланды [⚡⚡] 
-vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@158.160.249.194:443?encryption=none&security=reality&type=tcp&sni=ads.x5.ru&fp=chrome&pbk=5IH4GxRn58hemmfY2nr_cETdTXwFC1PHngCLY2OiWz8&sid=9f3c8d04b1e6&flow=xtls-rprx-vision#🇳🇱 Нидерланды [⚡⚡] (Резерв)
-vless://394f6981-a782-4779-9a85-e6cf22935d93@185.156.47.96:8443?type=tcp&security=tls&encryption=none&sni=yyz-ca-01.fromblancwithlove.com#🇨🇦 Канада [🐢] 
-vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@80.66.72.113:1443?encryption=none&security=reality&type=xhttp&sni=www.microsoft.com&fp=chrome&pbk=PZSCeoqKwEJ22bOlUk4uWLiUGShmvjHWDz-BfI3LlQ8&sid=a1b2c3d4&mode=auto#🇩🇪 Германия [⚡⚡] 
-vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@5.83.129.22:443?encryption=none&security=reality&type=xhttp&sni=www.microsoft.com&fp=chrome&pbk=pGHYmBhOdvOTyk5CWmd_wbZCUc4JV4XiqLlfTtvoPk8&sid=9f3c8d04b1e6&path=%2Fapi%2Fv2%2Ffeed%2Fupdates&mode=auto#🇩🇪 Германия [⚡] (резерв)
+vless://348b9173-d353-48d7-82bc-8f15d4c7cd37@18.194.140.98:443?encryption=none&type=raw&headerType=none&security=none#[🇩🇪] [vl-no-ra] [260607-021103.012]
+vless://3f3bb5cc-da8b-4551-8b76-ba223f1a5255@18.192.50.101:443?encryption=none&type=raw&headerType=none&security=none#[🇩🇪] [vl-no-ra] [260607-021113.927]
+vless://791ebf40-c495-4ade-8c7b-ce7596025a38@18.153.94.54:443?encryption=none&type=raw&headerType=none&security=none#[🇩🇪] [vl-no-ra] [260607-021220.285]
+vless://805aec0a-32db-4eaa-8b5e-10a6651471d1@18.195.94.102:443?encryption=none&type=raw&headerType=none&security=none#[🇩🇪] [vl-no-ra] [260607-021227.629]
+vless://8ecccb71-95ec-4a12-cbc5-ffc32c4d5ded@3.71.187.131:443?encryption=none&type=raw&headerType=none&security=none#[🇩🇪] [vl-no-ra] [260607-021241.469]
+vless://12e2b366-6426-4e09-9c6f-9c894262b923@de2.niekotin.de:80?encryption=none&type=ws&path=%2Fvless&security=none#[🇩🇪] [vl-no-ws] [260607-021027.132]
+vless://6fc8a6cb-3b95-40e0-b936-bd5c4db9b96e@snapp.ir:80?encryption=none&type=ws&host=kabotar.garfar.ir&path=%2F&security=none#[🇩🇪] [vl-no-ws] [260607-021210.285]
 vless://347a56c2-a453-4b32-86cd-7522943df88c@104.165.244.183:50095?security=reality&encryption=none&pbk=vZuBWF0YzlKI0fJWxU6hmOLHHQ5Qb1kf35HbZDcFCH4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=cdn.jsdelivr.net&sid=f2e1861359398ff2#🇵🇱 Польша 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
 hysteria2://10550754-cf62-3d3b-ba6a-50be27a275d7@185.106.96.231:443?headerType=none&encryption=none&sni=s559.ccgfw.top&insecure=0#🇺🇸 Соединёные штаты
