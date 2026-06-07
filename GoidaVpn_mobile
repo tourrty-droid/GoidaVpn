@@ -1,15 +1,15 @@
 # profile-title: GoidaVpn
 # profile-update-interval: 1
 #support-url: https://github.com/tourrty-droid/GoidaVpn
-#announce: 🟠 GoidaVpn Status: Сервера на досмотре 🟠 Чаще нажимайте сюда  ⬆️ (Пинг)
+#announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
 # мяу
 # гав
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
 vless://7b7619ef-3015-45e4-a1c0-5672f81b864c@158.160.252.95:443?type=tcp&security=reality&sni=ya.ru&fp=qq&flow=xtls-rprx-vision&pbk=G6ekEx_2qJMHo-DzjF7ww8UPbPiVSd8A6LY5yn-i3XU&sid=83915e401341#🇪🇪🌐 Эстония (Ютуб без рекламы)
 vless://fc965ad9-bdd7-4815-ad71-b39ec5972dc1@216.24.57.7:443?encryption=none&fp=chrome&host=octopusss4.com&path=%2Ftsghdws&security=tls&sni=octopusss4.com&type=ws#🇫🇮🌐 Финляндия (Ютуб с рекламой)
-vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷 Франция (Тестируем)
-vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷 Франция (Тестируем)
+vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷🌐 Франция [⚡⚡] (Ютуб без рекламы)
+vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷🌐 Франция (Резерв)
 vless://cfb70000-ed61-4a7e-89a3-2b9c2caa6001@185.242.19.250:443?encryption=none&type=xhttp&security=tls&host=top3739667002.mwscdn.ru&path=/livestreamcontent/&mode=auto&extra=null&sni=top3739667002.mwscdn.ru#🇲🇩🌐 Молдова
 vless://cfb70000-ed61-4a7e-89a3-2b9c2caa6001@185.242.19.250:443?encryption=none&type=xhttp&security=tls&host=top3739667002.mwscdn.ru&path=/livestreamcontent/&mode=packet-up&extra=null&sni=top3739667002.mwscdn.ru#🇲🇩🌐 Молдова (Резерв №1)
 vless://cfb70000-ed61-4a7e-89a3-2b9c2caa6001@185.242.19.250:443?encryption=none&type=xhttp&security=tls&path=/livestreamcontent&extra=null&fp=chrome&sni=top3739667002.mwscdn.ru#🇲🇩🌐 Молдова (Резерв №2) 
