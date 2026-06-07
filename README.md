@@ -5,19 +5,14 @@
 Репозиторий содержит регулярно обновляемые текстовые конфигурации для обхода интернет-ограничений. Списки включают прокси-серверы, работающие на базе современных протоколов шифрования и обхода цензуры: **VLESS (включая Reality), VMess, Hysteria2, Trojan и Shadowsocks**.
 
 ---
-## Что нового:
-Добавили 3 сервера `vless://...`
-и 2 `hysteria2://...`
-
-**Мы в разработке собственного приложения GoidaVpn следите за разработкой тут. Будем обновлять информацию**: Заканчиваем с дизайном
 
 ## Live-Статус
 
 | Платформа | Статус | Ссылка |
 | :--- | :--- | :--- |
 | **Android / iOS** | 🟢 Работает| [Тык](https://github.com/Vpn/blob/main/GoidaVpn_mobile) |
-| **Windows / macOS / Linux** | 🟢 Работает | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_Pc) |
-| **Android TV** | 🛠️ В разработке | Уже тестируем |
+| **Windows / macOS / Linux** | 🗑️ Временно Удален| [Удалено](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_Pc) |
+| **Android TV** | 🛠️ В разработке | Затруднения в создание|
 
 ---
 
