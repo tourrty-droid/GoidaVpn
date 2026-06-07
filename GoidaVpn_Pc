@@ -1,15 +1,15 @@
 # profile-title: GoidaVpn
 # profile-update-interval: 1
 #support-url: https://github.com/tourrty-droid/GoidaVpn
-#announce: 🟢 GoidaVpn Status: Good 🟢  Чаще нажимайте Пинг
+#announce: ⚫ GoidaVpn Status: В атаке ркн уже чиним ⚫  Чаще нажимайте Пинг
 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
 vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@147.45.50.243:1443?encryption=none&security=reality&type=xhttp&sni=gateway.icloud.com&fp=chrome&pbk=ZMvMtsHKNd39qVM9CuPLMEXUL19ViL4Qqqk1y5mMjko&sid=a1b2c3d4&mode=auto#🇳🇱 Нидерланды [⚡⚡] 
-vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@158.160.249.194:443?encryption=none&security=reality&type=tcp&sni=ads.x5.ru&fp=chrome&pbk=5IH4GxRn58hemmfY2nr_cETdTXwFC1PHngCLY2OiWz8&sid=9f3c8d04b1e6&flow=xtls-rprx-vision#🇳🇱 Нидерланды [⚡⚡] (Резерв) (Недоступен)
+vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@158.160.249.194:443?encryption=none&security=reality&type=tcp&sni=ads.x5.ru&fp=chrome&pbk=5IH4GxRn58hemmfY2nr_cETdTXwFC1PHngCLY2OiWz8&sid=9f3c8d04b1e6&flow=xtls-rprx-vision#🇳🇱 Нидерланды [⚡⚡] (Резерв)
 vless://394f6981-a782-4779-9a85-e6cf22935d93@185.156.47.96:8443?type=tcp&security=tls&encryption=none&sni=yyz-ca-01.fromblancwithlove.com#🇨🇦 Канада [🐢] 
 vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@80.66.72.113:1443?encryption=none&security=reality&type=xhttp&sni=www.microsoft.com&fp=chrome&pbk=PZSCeoqKwEJ22bOlUk4uWLiUGShmvjHWDz-BfI3LlQ8&sid=a1b2c3d4&mode=auto#🇩🇪 Германия [⚡⚡] 
 vless://32931d0f-d6a1-417f-8b2f-e22c82402e2e@5.83.129.22:443?encryption=none&security=reality&type=xhttp&sni=www.microsoft.com&fp=chrome&pbk=pGHYmBhOdvOTyk5CWmd_wbZCUc4JV4XiqLlfTtvoPk8&sid=9f3c8d04b1e6&path=%2Fapi%2Fv2%2Ffeed%2Fupdates&mode=auto#🇩🇪 Германия [⚡] (резерв)
 vless://347a56c2-a453-4b32-86cd-7522943df88c@104.165.244.183:50095?security=reality&encryption=none&pbk=vZuBWF0YzlKI0fJWxU6hmOLHHQ5Qb1kf35HbZDcFCH4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=cdn.jsdelivr.net&sid=f2e1861359398ff2#🇵🇱 Польша 
 vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
-hysteria2://10550754-cf62-3d3b-ba6a-50be27a275d7@185.106.96.231:443?headerType=none&encryption=none&sni=s559.ccgfw.top&insecure=0#🇺🇸 Соединёные штаты (Недоступен)
+hysteria2://10550754-cf62-3d3b-ba6a-50be27a275d7@185.106.96.231:443?headerType=none&encryption=none&sni=s559.ccgfw.top&insecure=0#🇺🇸 Соединёные штаты
 hysteria2://e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2@185.227.108.195:11000?headerType=none&encryption=none&sni=de-node.farnet.top&insecure=0#🇩🇪 Германия [⚡]
