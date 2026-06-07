@@ -12,7 +12,7 @@
 | :--- | :--- | :--- |
 | **Android / iOS** | 🟢 Нормальный | [Тык](https://github.com/Vpn/blob/main/GoidaVpn_mobile) |
 | **Windows / macOS / Linux** | 🗑️ Временно Удален| [Удалено](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_Pc) |
-| **Android TV** | 🛠️ В разработке | Затруднения в создание|
+| **Android TV** | 🛠️ В разработке | Около 4 Серверов было Заблокировано РКН|
 
 ---
 
