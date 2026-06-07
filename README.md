@@ -17,7 +17,7 @@
 | :--- | :--- | :--- |
 | **Android / iOS** | 🟢 Работает| [Тык](https://github.com/Vpn/blob/main/GoidaVpn_mobile) |
 | **Windows / macOS / Linux** | 🟢 Работает | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_Pc) |
-| **Android TV** | 🛠️ В разработке | Уже тестируем примерное время выпуска 4 часа  |
+| **Android TV** | 🛠️ В разработке | Уже тестируем |
 
 ---
 
