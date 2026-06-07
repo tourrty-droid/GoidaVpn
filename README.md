@@ -15,7 +15,7 @@
 
 | Платформа | Статус | Ссылка |
 | :--- | :--- | :--- |
-| **Android / iOS** | 🟢 Работает (Mobile) | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_mobile) |
+| **Android / iOS** | 🟠 Меняем SNI иза блокировки 3 серверов (Mobile) | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_mobile) |
 | **Windows / macOS / Linux** | ⚫ Атакован РКН (PC) | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_Pc) |
 
 ---
