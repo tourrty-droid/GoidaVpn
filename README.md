@@ -15,7 +15,7 @@
 
 | Платформа | Статус | Ссылка |
 | :--- | :--- | :--- |
-| **Android / iOS** | 🟠 Работает с Атакованle) | [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_mobile) |
+| **Android / iOS** | 🟠 Работает с перебоями| [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_mobile) |
 | **Windows / macOS / Linux**Linux** | ⚪ После атаки работают некоторые сервера [Тык](https://github.com/tourrty-droid/GoidaVpn/blob/main/GoidaVpn_Pc) |
 
 ---
