@@ -9,7 +9,7 @@ OUTPUT_FILE = "AutoConfigs.txt"
 # Ваша кастомная шапка подписок
 HEADER_TEXT = """# profile-title: GoidaVpn
 # profile-update-interval: 1
-#support-url: https://github.com
+#support-url: https://github.com/tourrty-droid/GoidaVpn
 #announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
 # мяу
 # гав\n\n"""
