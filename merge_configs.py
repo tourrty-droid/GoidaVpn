@@ -2,8 +2,10 @@ import os
 import random
 import requests
 
-# Прямая ссылка (raw) на конфигурации, которую вы указали
-RAW_CONFIG_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/vless.txt"
+# Ссылки на донорские репозитории
+VLESS_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/vless.txt"
+HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/new/by_protocol/hysteria2/hysteria2_001.txt"
+
 OUTPUT_FILE = "AutoConfigs.txt"
 
 # Ваша кастомная шапка подписок
@@ -14,60 +16,70 @@ HEADER_TEXT = """# profile-title: GoidaVpn
 # мяу
 # гав\n\n"""
 
-def fetch_and_merge():
-    print("Получение свежих данных из репозитория...")
+def download_data(url):
+    """Скачивает текст по ссылке с таймаутом"""
     try:
-        response = requests.get(RAW_CONFIG_URL, timeout=15)
+        response = requests.get(url, timeout=15)
         response.raise_for_status()
-        config_data = response.text
+        return response.text
     except Exception as e:
-        print(f"Не удалось загрузить данные: {e}")
-        return False
+        print(f"⚠️ Ошибка при скачивании {url}: {e}")
+        return ""
 
-    print("Фильтрация строк по тегам YouTube/YT в названии...")
+def fetch_and_merge():
+    print("Запуск парсинга баз данных...")
+    
+    # Скачиваем оба файла
+    vless_data = download_data(VLESS_URL)
+    hysteria_data = download_data(HYSTERIA_URL)
+    
+    # Объединяем все строки в один массив
+    combined_raw_lines = vless_data.splitlines() + hysteria_data.splitlines()
+    
     matched_lines = []
     all_lines = []
     
-    for line in config_data.splitlines():
+    print("Фильтрация строк по тегам YouTube/YT...")
+    for line in combined_raw_lines:
         line = line.strip()
         if not line:
             continue
             
-        # Сохраняем все конфигурации на случай, если фильтр пуст
+        # Сохраняем вообще каждую рабочую ссылку для подстраховки
         all_lines.append(line)
-            
+        
         if '#' in line:
             config_parts = line.split('#')
             config_name = config_parts[-1].lower()
             
-            # Ищем упоминания youtube или сокращения yt
+            # Наш фильтр по тегам YouTube
             if 'youtube' in config_name or 'yt' in config_name:
                 matched_lines.append(line)
 
     print(f"Найдено строго по фильтру YouTube: {len(matched_lines)}")
     
-    # Защита от пустого файла
+    # ЗАЩИТА: Если по фильтру ничего нет, берем общую базу из VLESS + Hysteria2
     if not matched_lines:
-        print("Строк с тегом YouTube не найдено. Используем общую базу.")
+        print("Строк с тегом YouTube не найдено. Смешиваем общую базу.")
         matched_lines = all_lines
 
     if not matched_lines:
-        print("Репозиторий источника оказался пуст.")
+        print("Оба источника пусты. Прерывание операции.")
         return False
 
-    # Перемешиваем список, чтобы конфигурации всегда менялись
+    # Перемешиваем общий список (теперь там лежат и VLESS, и Hysteria2)
     random.shuffle(matched_lines)
     
-    # Отбираем ровно ТОП-7 штук
+    # Срезаем ТОП-7 лучших
     top_7_configs = matched_lines[:7]
-    print(f"Успешно отобрано конфигураций для записи: {len(top_7_configs)}")
+    print(f"Успешно сформировано конфигураций для записи: {len(top_7_configs)}")
     
-    print(f"Запись данных в {OUTPUT_FILE}...")
+    print(f"Запись объединенных данных в {OUTPUT_FILE}...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(HEADER_TEXT)
         for config in top_7_configs:
             f.write(config + "\n")
-    
+            
     print(f"Файл {OUTPUT_FILE} успешно обновлен!")
     return True
 
