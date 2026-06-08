@@ -7,10 +7,12 @@ RAW_CONFIG_URL = "https://githubusercontent.com"
 OUTPUT_FILE = "AutoConfigs.txt"
 
 # Ваша кастомная шапка
-HEADER_TEXT = """# ==========================================
-# ТОП-7 КОНФИГУРАЦИЙ ДЛЯ YOUTUBE
-# Обновляется автономно через GitHub Actions
-# ==========================================\n\n"""
+HEADER_TEXT = """# profile-title: GoidaVpn
+# profile-update-interval: 1
+#support-url: https://github.com/tourrty-droid/GoidaVpn
+#announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
+# мяу
+# гав\n\n"""
 
 def fetch_and_merge():
     print("Получение свежих данных из репозитория...")
@@ -31,32 +33,32 @@ def fetch_and_merge():
         if not line:
             continue
             
-        # Запоминаем вообще все конфигурации на случай, если фильтр не сработает
+        # Сохраняем все строки репозитория на случай форс-мажора
         all_lines.append(line)
             
         if '#' in line:
             config_parts = line.split('#')
             config_name = config_parts[-1].lower()
             
-            # Проверяем расширенный фильтр: и youtube, и сокращение yt
+            # Проверяем расширенный фильтр
             if 'youtube' in config_name or 'yt' in config_name:
                 matched_lines.append(line)
 
     print(f"Найдено строго по фильтру YouTube: {len(matched_lines)}")
     
-    # ЗАЩИТА: Если по фильтру ничего не нашлось, берем любые конфигурации из файла
+    # ЗАЩИТА: Если по фильтру ничего не нашлось, берём любые доступные конфигурации
     if not matched_lines:
-        print("Строк с тегом YouTube не найдено. Используем общие рабочие конфигурации.")
+        print("Строк с тегом YouTube не найдено. Берем общую базу.")
         matched_lines = all_lines
 
     if not matched_lines:
-        print("Репозиторий источника пуст. Прерывание.")
+        print("Репозиторий источника оказался пуст.")
         return False
 
-    # Перемешиваем список, чтобы конфигурации всегда менялись при обновлении
+    # Перемешиваем список, чтобы конфигурации всегда менялись
     random.shuffle(matched_lines)
     
-    # Отбираем ровно 7 штук
+    # Отбираем ровно ТОП-7 штук
     top_7_configs = matched_lines[:7]
     print(f"Успешно отобрано конфигураций для записи: {len(top_7_configs)}")
     
