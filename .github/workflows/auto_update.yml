@@ -1,8 +1,8 @@
-name: Auto Update Configs
+name: Hourly Auto Update Configs
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 * * * *'
   push:
     branches:
       - main
@@ -17,7 +17,7 @@ jobs:
       contents: write
 
     steps:
-    - name: Клонирование вашего репозитория
+    - name: Клонирование репозитория
       uses: actions/checkout@v4
 
     - name: Настройка Python
@@ -36,13 +36,14 @@ jobs:
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
-        # Добавляем папки data и logs в Git
+        # Adding the data and logs directories to Git
         if [ -d "data" ]; then git add data/; fi
         if [ -d "logs" ]; then git add logs/; fi
         
         if ! git diff --staged --quiet; then
-          git commit -m "🚀 Автоматическое обновление 30 минут"
+          git commit -m "🚀 Автоматическое обновление (1 час)"
           git push
         else
           echo "Изменений нет."
         fi
+        
