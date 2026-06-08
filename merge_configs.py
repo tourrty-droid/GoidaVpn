@@ -1,8 +1,5 @@
 import os
-import re
-import socket
-import time
-import urllib.parse
+import random
 import requests
 
 # Прямая ссылка (raw) на конфигурации
@@ -11,34 +8,9 @@ OUTPUT_FILE = "AutoConfigs.txt"
 
 # Ваша кастомная шапка
 HEADER_TEXT = """# ==========================================
-# ТОП-7 САМЫХ БЫСТРЫХ КОНФИГУРАЦИЙ (Фильтр: YouTube)
-# Отсортировано по скорости отклика (TCP Ping)
+# ТОП-7 СЛУЧАЙНЫХ КОНФИГУРАЦИЙ (Фильтр: YouTube)
 # Обновляется автономно через GitHub Actions
 # ==========================================\n\n"""
-
-def measure_ping(vless_link):
-    """
-    Разбирает строку VLESS, замеряет скорость отклика по TCP в секундах.
-    Возвращает время ответа (float) или None, если сервер недоступен.
-    """
-    try:
-        clean_link = vless_link.replace("vless://", "http://")
-        parsed = urllib.parse.urlparse(clean_link)
-        
-        host = parsed.hostname
-        port = parsed.port
-        
-        if not host or not port:
-            return None
-            
-        start_time = time.perf_counter()
-        with socket.create_connection((host, int(port)), timeout=2.5):
-            end_time = time.perf_counter()
-            
-        # Возвращаем затраченное время
-        return end_time - start_time
-    except (socket.timeout, socket.error, ValueError):
-        return None
 
 def fetch_and_merge():
     print("Получение свежих данных из репозитория...")
@@ -68,35 +40,17 @@ def fetch_and_merge():
     print(f"Найдено подходящих по имени конфигов: {len(matched_lines)}")
     
     if not matched_lines:
-        print("Подходящих конфигов не найдено. Выход.")
+        print("Подходящих конфигов не найдено. Прерывание, чтобы не портить файл.")
         return False
 
-    print("Запуск замера скорости серверов (TCP Ping)...")
-    scored_configs = []
+    # Перемешиваем список, чтобы конфигурации всегда менялись при обновлении
+    random.shuffle(matched_lines)
     
-    for index, config in enumerate(matched_lines, 1):
-        print(f"[{index}/{len(matched_lines)}] Тестирование... ", end="", flush=True)
-        ping_time = measure_ping(config)
-        
-        if ping_time is not None:
-            ping_ms = int(ping_time * 1000)
-            print(f"✅ ОТВЕТ: {ping_ms}ms")
-            scored_configs.append((ping_time, config))
-        else:
-            print("❌ ОТКЛОНЕН")
-
-    if not scored_configs:
-        print("Ни один сервер не ответил на запросы. Файл не изменен.")
-        return False
-
-    # Сортируем список по возрастанию времени ответа (от самых быстрых к медленным)
-    scored_configs.sort(key=lambda x: x[0])
+    # Отбираем ровно 7 штук
+    top_7_configs = matched_lines[:7]
+    print(f"Успешно отобрано конфигураций для записи: {len(top_7_configs)}")
     
-    # Отбираем только ТОП-7 лучших серверов
-    top_7_configs = [config for _, config in scored_configs[:7]]
-    print(f"\nВыбрано лучших серверов для записи: {len(top_7_configs)}")
-
-    print(f"Запись ТОП-7 конфигураций в {OUTPUT_FILE}...")
+    print(f"Запись данных в {OUTPUT_FILE}...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(HEADER_TEXT)
         for config in top_7_configs:
