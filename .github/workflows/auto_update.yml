@@ -2,7 +2,7 @@ name: Auto Update Configs
 
 on:
   schedule:
-    - cron: '0 */3 * * *' # Запуск каждые 3 часа
+    - cron: '*/5 * * * *' # Запуск каждые 5 минут (минимальный интервал GitHub)
   workflow_dispatch: # Кнопка ручного запуска
 
 jobs:
@@ -32,11 +32,10 @@ jobs:
         git config --local user.name "github-actions[bot]"
         touch AutoConfigs.txt 
         git add AutoConfigs.txt
-        # Добавляем отслеживание всей папки с логами
         if [ -d "logs" ]; then git add logs/; fi
         if ! git diff --staged --quiet; then
-          git commit -m "Обновление ТОП-7 конфигов и ротация логов [skip ci]"
+          git commit -m "Автоматическое обновление конфигураций [skip ci]"
           git push
         else
-          echo "Изменений в файлах нет."
+          echo "Изменений в файлах нет. Пропуск коммита."
         fi
