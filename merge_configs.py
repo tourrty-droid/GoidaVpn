@@ -13,7 +13,9 @@ VLESS_URL_3 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russ
 HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/hysteria2.txt"
 # =====================================================================
 
-OUTPUT_FILE = "AutoConfigs.txt"
+# НАСТРОЙКА НОВЫХ ПУТЕЙ
+OUTPUT_DIR = "data"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "GoiVpnMirrors.txt")
 LOGS_DIR = "logs"
 
 HEADER_TEXT = """# profile-title: GoidaVpn
@@ -29,7 +31,7 @@ COUNTRY_MAP = {
     'FI': ('🇫🇮', 'Финляндия'), 'RU': ('🇷🇺', 'Россия'), 'SG': ('🇸🇬', 'Сингапур'),
     'JP': ('🇯🇵', 'Япония'), 'HK': ('🇭🇰', 'Гонконг'), 'TR': ('🇹🇷', 'Турция'),
     'PL': ('🇵🇱', 'Польша'), 'SE': ('🇸🇪', 'Швеция'), 'CH': ('🇨🇭', 'Швейцария'),
-    'KZ': ('🇰🇿', 'Казахстан'), 'UA': ('🇺🇦', 'Украина'), 'BY': ('🇧🇾', 'Беларусь'),
+    'KZ': ('🇰🇿', 'Касахстан'), 'UA': ('🇺🇦', 'Украина'), 'BY': ('🇧🇾', 'Беларусь'),
 }
 
 def clean_and_rename_config(line, index):
@@ -57,6 +59,7 @@ def manage_logs_and_backup():
     if not os.path.exists(LOGS_DIR):
         os.makedirs(LOGS_DIR)
 
+    # Резервная копия теперь берётся из data/GoiVpnMirrors.txt
     if os.path.exists(OUTPUT_FILE) and os.path.getsize(OUTPUT_FILE) > 0:
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         backup_name = os.path.join(LOGS_DIR, f"backup_{current_time}.txt")
@@ -77,11 +80,15 @@ def manage_logs_and_backup():
         print(f"⚠️ Ошибка при очистке папки логов: {e}")
 
 def fetch_and_merge():
+    # Автоматическое создание папки data перед началом работы
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+        print(f"Создана папка {OUTPUT_DIR}")
+
     manage_logs_and_backup()
 
     print("Запуск парсинга всех баз данных...")
     
-    # Скачиваем данные со ВСЕХ источников
     urls = [VLESS_URL_1, VLESS_URL_2, VLESS_URL_3, HYSTERIA_URL]
     combined_raw_lines = []
     
