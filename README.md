@@ -37,7 +37,6 @@ The repository features an automated backend driven by `merge_configs.py`. This 
 | :--- | :---: | :--- |
 | **Android / iOS** | 🟢 Active | [View Configs](./AutoConfigs.txt) |
 | **Windows / macOS / Linux** | 🛠 In Development | *Temporary maintenance* |
-| **Android TV** | 🛠 In Development | *~4 servers blocked by RKN* |
 
 ### 🗂 Repository Structure
 - `AutoConfigs.txt` / `GoidaVpnList1` — Text files containing ready-to-use configuration strings (`vless://`, `hysteria2://`, etc.).
