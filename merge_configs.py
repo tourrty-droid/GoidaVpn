@@ -1,17 +1,21 @@
 import os
 import random
-import time
-from datetime import datetime, timedelta
+from datetime import datetime
 import requests
 
-# Ссылки на донорские репозитории
-VLESS_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/vless.txt"
-HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/ru-sni/hysteria2.txt"
+# =====================================================================
+# ИСТОЧНИКИ КОНФИГУРАЦИЙ
+# =====================================================================
+VLESS_URL_1 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/new/all_new.txt"
+VLESS_URL_2 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/new/by_protocol/vless/vless_001.txt"
+VLESS_URL_3 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/vless.txt"
+
+HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/hysteria2.txt"
+# =====================================================================
 
 OUTPUT_FILE = "AutoConfigs.txt"
 LOGS_DIR = "logs"
 
-# Ваша кастомная шапка подписок
 HEADER_TEXT = """# profile-title: GoidaVpn
 # profile-update-interval: 1
 #support-url: https://github.com/tourrty-droid/GoidaVpn
@@ -50,52 +54,45 @@ def download_data(url):
         return ""
 
 def manage_logs_and_backup():
-    """Создает резервную копию старого файла и удаляет файлы старше 7 дней"""
     if not os.path.exists(LOGS_DIR):
         os.makedirs(LOGS_DIR)
-        print(f"Создана папка {LOGS_DIR}")
 
-    # 1. Бекап текущего файла, если он существует и не пустой
     if os.path.exists(OUTPUT_FILE) and os.path.getsize(OUTPUT_FILE) > 0:
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         backup_name = os.path.join(LOGS_DIR, f"backup_{current_time}.txt")
         try:
             with open(OUTPUT_FILE, "r", encoding="utf-8") as src, open(backup_name, "w", encoding="utf-8") as dst:
                 dst.write(src.read())
-            print(f"Старые конфиги сохранены в архив: {backup_name}")
         except Exception as e:
             print(f"⚠️ Не удалось создать бекап: {e}")
 
-    # 2. Очистка логов старше 7 дней
-    print("Проверка папки логов на наличие старых файлов...")
-    now = datetime.now()
-    seven_days_ago = now - timedelta(days=7)
-    
-    for filename in os.listdir(LOGS_DIR):
-        file_path = os.path.join(LOGS_DIR, filename)
-        if os.path.isfile(file_path) and filename.startswith("backup_") and filename.endswith(".txt"):
-            try:
-                # Извлекаем дату из имени файла (backup_YYYY-MM-DD_HH-MM-SS.txt)
-                date_str = filename.replace("backup_", "").split("_")[0]
-                file_date = datetime.strptime(date_str, "%Y-%m-%d")
-                
-                if file_date < seven_days_ago:
-                    os.remove(file_path)
-                    print(f"🗑️ Удален старый лог-файл: {filename}")
-            except Exception as e:
-                print(f"⚠️ Не удалось проверить/удалить файл {filename}: {e}")
+    try:
+        log_files = [os.path.join(LOGS_DIR, f) for f in os.listdir(LOGS_DIR) if f.startswith("backup_") and f.endswith(".txt")]
+        log_files.sort(key=os.path.getmtime)
+        if len(log_files) > 10:
+            files_to_delete = log_files[:-10]
+            for file_path in files_to_delete:
+                os.remove(file_path)
+    except Exception as e:
+        print(f"⚠️ Ошибка при очистке папки логов: {e}")
 
 def fetch_and_merge():
-    # Запускаем ротацию логов перед записью новых данных
     manage_logs_and_backup()
 
-    print("Запуск парсинга баз данных...")
-    vless_data = download_data(VLESS_URL)
-    hysteria_data = download_data(HYSTERIA_URL)
+    print("Запуск парсинга всех баз данных...")
     
-    combined_raw_lines = vless_data.splitlines() + hysteria_data.splitlines()
+    # Скачиваем данные со ВСЕХ источников
+    urls = [VLESS_URL_1, VLESS_URL_2, VLESS_URL_3, HYSTERIA_URL]
+    combined_raw_lines = []
+    
+    for url in urls:
+        data = download_data(url)
+        if data:
+            combined_raw_lines.extend(data.splitlines())
+    
     matched_lines, all_lines = [], []
     
+    print("Фильтрация строк по тегам YouTube/YT...")
     for line in combined_raw_lines:
         line = line.strip()
         if not line:
@@ -107,10 +104,11 @@ def fetch_and_merge():
                 matched_lines.append(line)
 
     if not matched_lines:
+        print("Строк с тегом YouTube не найдено. Смешиваем общую базу.")
         matched_lines = all_lines
 
     if not matched_lines:
-        print("Оба источника пусты. Прерывание.")
+        print("Все источники пусты. Прерывание.")
         return False
 
     random.shuffle(matched_lines)
@@ -118,7 +116,7 @@ def fetch_and_merge():
     
     beautiful_configs = [clean_and_rename_config(config, i) for i, config in enumerate(top_7_configs, 1)]
     
-    print(f"Запись свежих данных в {OUTPUT_FILE}...")
+    print(f"Запись свежих объединенных данных в {OUTPUT_FILE}...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(HEADER_TEXT)
         for config in beautiful_configs:
