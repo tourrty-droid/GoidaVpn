@@ -28,10 +28,10 @@ HEADER_TEXT = """# profile-title: GoidaVpn
 COUNTRY_MAP = {
     'NL': ('🇳🇱', 'Нидерланды'), 'US': ('🇺🇸', 'США'), 'DE': ('🇩🇪', 'Германия'),
     'GB': ('🇬🇧', 'Великобритания'), 'UK': ('🇬🇧', 'Великобритания'), 'FR': ('🇫🇷', 'Франция'),
-    'FI': ('🇫🇮', 'Финляндия'), 'RU': ('🇷🇺', 'Россия'), 'SG': ('🇸🇬', 'Сингапур'),
+    'FI': ('🇫ᛁ', 'Финляндия'), 'RU': ('🇷🇺', 'Россия'), 'SG': ('🇸🇬', 'Сингапур'),
     'JP': ('🇯🇵', 'Япония'), 'HK': ('🇭🇰', 'Гонконг'), 'TR': ('🇹🇷', 'Турция'),
     'PL': ('🇵🇱', 'Польша'), 'SE': ('🇸🇪', 'Швеция'), 'CH': ('🇨🇭', 'Швейцария'),
-    'KZ': ('🇰🇿', 'Касахстан'), 'UA': ('🇺🇦', 'Украина'), 'BY': ('🇧🇾', 'Беларусь'),
+    'KZ': ('🇰🇿', 'Казахстан'), 'UA': ('🇺🇦', 'Украина'), 'BY': ('🇧🇾', 'Беларусь'),
 }
 
 def clean_and_rename_config(line, index):
@@ -59,7 +59,6 @@ def manage_logs_and_backup():
     if not os.path.exists(LOGS_DIR):
         os.makedirs(LOGS_DIR)
 
-    # Резервная копия теперь берётся из data/GoiVpnMirrors.txt
     if os.path.exists(OUTPUT_FILE) and os.path.getsize(OUTPUT_FILE) > 0:
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         backup_name = os.path.join(LOGS_DIR, f"backup_{current_time}.txt")
@@ -80,7 +79,6 @@ def manage_logs_and_backup():
         print(f"⚠️ Ошибка при очистке папки логов: {e}")
 
 def fetch_and_merge():
-    # Автоматическое создание папки data перед началом работы
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         print(f"Создана папка {OUTPUT_DIR}")
