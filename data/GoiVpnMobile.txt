@@ -1,0 +1,21 @@
+# profile-title: GoidaVpn
+# profile-update-interval: 1
+#support-url: https://github.com/tourrty-droid/GoidaVpn
+#announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
+# мяу
+# гав
+
+vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🇮🇹🌐 Италия (Ютуб без рекламы)
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🇮🇹🌐 Италия (Резерв)
+vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&allowInsecure=1&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱🌐 Нидерланды
+vless://fc965ad9-bdd7-4815-ad71-b39ec5972dc1@216.24.57.7:443?encryption=none&fp=chrome&host=octopusss4.com&path=%2Ftsghdws&security=tls&sni=octopusss4.com&type=ws#🇫🇮🌐 Финляндия (Ютуб с рекламой)
+vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷🌐 Франция [⚡⚡] (Ютуб без рекламы)
+vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷🌐 Франция (Резерв)
+vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
+hysteria2://e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2@185.227.108.195:11000/?sni=de-node.farnet.top#🇩🇪🌐 [⚡] Германия (Ютуб с рекламой)
+hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@62.210.26.173:64772?sni=bing.com&insecure=1#🇫🇷🌐 [🐢🐢] Франция
+hysteria2://rs2mR3g9bZiMloftx6lZQ59Um1Ld@80.66.81.78:9443?sni=tunel1.washing.help&obfs=salamander&obfs-password=oMgvuBy5Lj5kYM57sGsnjpjNcSEQ&insecure=0#🇷🇺🌐 [⚡⚡] Россия (Повышение Пинга)
+hysteria2://rs2mR3g9bZiMloftx6lZQ59Um1Ld@80.66.81.78:9443?sni=tunel1.washing.help&obfs=salamander&obfs-password=oMgvuBy5Lj5kYM57sGsnjpjNcSEQ&insecure=0#🇷🇺🌐 [⚡⚡] Россия (Повышение Пинга)
+hysteria2://github.com%2FAlvin9999-newpac%2Ffanqiang@62.210.26.173:64772?sni=bing.com&insecure=1#🇫🇷🌐 [🐢🐢] Франция
+hysteria2://rs2mR3g9bZiMloftx6lZQ59Um1Ld@80.66.81.78:9443?sni=tunel1.washing.help&obfs=salamander&obfs-password=oMgvuBy5Lj5kYM57sGsnjpjNcSEQ&insecure=0#🇷🇺🌐 [⚡⚡] Россия (Повышение Пинга)
