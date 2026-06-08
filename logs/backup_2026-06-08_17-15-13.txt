@@ -1,0 +1,14 @@
+# profile-title: GoidaVpn
+# profile-update-interval: 1
+#support-url: https://github.com/tourrty-droid/GoidaVpn
+#announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
+# мяу
+# гав
+
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🌐 Неизвестно | Server #1
+vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷 Франция | Server #2
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🌐 Неизвестно | Server #3
+hysteria2://rs2mR3g9bZiMloftx6lZQ59Um1Ld@80.66.81.78:9443?sni=tunel1.washing.help&obfs=salamander&obfs-password=oMgvuBy5Lj5kYM57sGsnjpjNcSEQ&insecure=0#🇷🇺 Россия | Server #4
+vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&allowInsecure=1&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱 Нидерланды | Server #5
+vless://394f6981-a782-4779-9a85-e6cf22935d93@152.233.28.196:8443?encryption=none&security=tls&sni=uk1.fromblancwithlove.com&allowInsecure=1&type=tcp&headerType=none#🌐 Неизвестно | Server #6
+vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷 Франция | Server #7
