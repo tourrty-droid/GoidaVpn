@@ -5,8 +5,8 @@ on:
     - cron: '*/30 * * * *' # Запуск каждые 30 минут
   push:
     branches:
-      - main # Этот триггер "разбудит" планировщик при вашем следующем изменении кода
-  workflow_dispatch: # Кнопка ручного запуска
+      - main 
+  workflow_dispatch: 
 
 jobs:
   update-configs:
