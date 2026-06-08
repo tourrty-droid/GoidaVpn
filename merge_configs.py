@@ -9,14 +9,16 @@ import requests
 VLESS_URL_1 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/new/all_new.txt"
 VLESS_URL_2 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/new/by_protocol/vless/vless_001.txt"
 VLESS_URL_3 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/vless.txt"
-
 HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/hysteria2.txt"
-# =====================================================================
 
-# НАСТРОЙКА ПУТЕЙ
+# НАСТРОЙКА ПУТЕЙ И TELEGRAM
 OUTPUT_DIR = "data"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "GoiVpnAUTO")
 LOGS_DIR = "logs"
+
+# Получаем данные для Telegram из скрытых переменных GitHub
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 HEADER_TEXT = """# profile-title: GoidaVpn
 # profile-update-interval: 1
@@ -33,6 +35,23 @@ COUNTRY_MAP = {
     'PL': ('🇵🇱', 'Польша'), 'SE': ('🇸🇪', 'Швеция'), 'CH': ('🇨🇭', 'Швейцария'),
     'KZ': ('🇰🇿', 'Казахстан'), 'UA': ('🇺🇦', 'Украина'), 'BY': ('🇧🇾', 'Беларусь'),
 }
+
+def send_telegram_message(text):
+    """Отправляет сообщение в Telegram, если настроены переменные"""
+    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
+        print("⚠️ Telegram токен или Chat ID не найдены. Уведомление не отправлено.")
+        return
+
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": text,
+        "parse_mode": "HTML"
+    }
+    try:
+        requests.post(url, json=payload, timeout=10)
+    except Exception as e:
+        print(f"⚠️ Ошибка отправки в Telegram: {e}")
 
 def clean_and_rename_config(line, index):
     if '#' not in line:
@@ -59,53 +78,38 @@ def manage_logs_and_backup():
     if not os.path.exists(LOGS_DIR):
         os.makedirs(LOGS_DIR)
 
-    # 1. Создаем бэкап с фиксацией точного времени (Часы-Минуты-Секунды)
     if os.path.exists(OUTPUT_FILE) and os.path.getsize(OUTPUT_FILE) > 0:
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         backup_name = os.path.join(LOGS_DIR, f"backup_{current_time}.txt")
         try:
             with open(OUTPUT_FILE, "r", encoding="utf-8") as src, open(backup_name, "w", encoding="utf-8") as dst:
                 dst.write(src.read())
-            print(f"Резервная копия сохранена с точным временем: {backup_name}")
         except Exception as e:
             print(f"⚠️ Не удалось создать бекап: {e}")
 
-    # 2. ОЧИСТКА КАЖДЫЙ ДЕНЬ: Удаляем любые бэкапы, которые старше 24 часов
     try:
-        print("Проверка папки логов на наличие файлов старше 24 часов...")
         now = datetime.now()
         one_day_ago = now - timedelta(days=1)
-        
         for filename in os.listdir(LOGS_DIR):
             file_path = os.path.join(LOGS_DIR, filename)
-            
             if os.path.isfile(file_path) and filename.startswith("backup_") and filename.endswith(".txt"):
                 try:
-                    # Извлекаем дату и время из имени файла
                     date_str = filename.replace("backup_", "").replace(".txt", "")
                     file_date = datetime.strptime(date_str, "%Y-%m-%d_%H-%M-%S")
-                    
-                    # Если файл старше суток — удаляем
                     if file_date < one_day_ago:
                         os.remove(file_path)
-                        print(f"🗑️ Срок хранения истек (24ч). Удален лог: {filename}")
                 except ValueError:
                     file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
                     if file_mtime < one_day_ago:
                         os.remove(file_path)
-                        print(f"🗑️ Удален старый файл по системному времени: {filename}")
-                        
     except Exception as e:
         print(f"⚠️ Ошибка при очистке папки логов: {e}")
 
 def fetch_and_merge():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
-        print(f"Создана папка {OUTPUT_DIR}")
 
     manage_logs_and_backup()
-
-    print("Запуск парсинга всех баз данных...")
     
     urls = [VLESS_URL_1, VLESS_URL_2, VLESS_URL_3, HYSTERIA_URL]
     combined_raw_lines = []
@@ -117,7 +121,6 @@ def fetch_and_merge():
     
     matched_lines, all_lines = [], []
     
-    print("Фильтрация строк по тегам YouTube/YT...")
     for line in combined_raw_lines:
         line = line.strip()
         if not line:
@@ -129,25 +132,24 @@ def fetch_and_merge():
                 matched_lines.append(line)
 
     if not matched_lines:
-        print("Строк с тегом YouTube не найдено. Смешиваем общую базу.")
         matched_lines = all_lines
 
     if not matched_lines:
-        print("Все источники пусты. Прерывание.")
+        # Отправляем алерт об ошибке
+        send_telegram_message("❌ <b>GoidaVpn: Ошибка!</b>\nВсе источники серверов пусты. Обновление прервано.")
         return False
 
     random.shuffle(matched_lines)
     top_7_configs = matched_lines[:7]
-    
     beautiful_configs = [clean_and_rename_config(config, i) for i, config in enumerate(top_7_configs, 1)]
     
-    print(f"Запись свежих объединенных данных в {OUTPUT_FILE}...")
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(HEADER_TEXT)
         for config in beautiful_configs:
             f.write(config + "\n")
             
-    print(f"Файл {OUTPUT_FILE} успешно обновлен!")
+    # Отправляем сообщение об успешном обновлении
+    send_telegram_message(f"✅ <b>GoidaVpn обновлен!</b>\nЗаписано свежих серверов: {len(beautiful_configs)}")
     return True
 
 if __name__ == "__main__":
