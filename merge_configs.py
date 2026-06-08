@@ -81,16 +81,15 @@ def manage_logs_and_backup():
             
             if os.path.isfile(file_path) and filename.startswith("backup_") and filename.endswith(".txt"):
                 try:
-                    # Извлекаем дату и время из имени файла (backup_YYYY-MM-DD_HH-MM-SS.txt)
+                    # Извлекаем дату и время из имени файла
                     date_str = filename.replace("backup_", "").replace(".txt", "")
                     file_date = datetime.strptime(date_str, "%Y-%m-%d_%H-%M-%S")
                     
-                    # Если файл был создан больше суток назад — удаляем его
+                    # Если файл старше суток — удаляем
                     if file_date < one_day_ago:
                         os.remove(file_path)
                         print(f"🗑️ Срок хранения истек (24ч). Удален лог: {filename}")
                 except ValueError:
-                    # На случай сбоя формата имени проверяем реальное время изменения файла операционной системой
                     file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
                     if file_mtime < one_day_ago:
                         os.remove(file_path)
@@ -153,3 +152,4 @@ def fetch_and_merge():
 
 if __name__ == "__main__":
     fetch_and_merge()
+    
