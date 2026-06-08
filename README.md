@@ -2,14 +2,10 @@
 
 > **Your path to a free life / Ваш путь к свободной жизни.**
 
-<div align="center">
-  <img src="https://shields.io" alt="GitHub Stars">
-  <img src="https://shields.io" alt="License">
-</div>
-
 ---
 
 ## 📋 Table of Contents / Содержание
+
 - [English](#english)
 - [Русский](#русский)
 
@@ -36,7 +32,7 @@ The repository features an automated backend driven by `merge_configs.py`. This 
 | Platform | Status | Link |
 | :--- | :---: | :--- |
 | **Android / iOS** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/GoidaVpn_mobile) |
-| **Windows / macOS / Linux** | 🟢 Active | [View Configs] |
+| **Windows / macOS / Linux** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/AutoConfigs.txt) |
 
 ### 🗂 Repository Structure
 - `AutoConfigs.txt` / `GoidaVpnList1` — Text files containing ready-to-use configuration strings (`vless://`, `hysteria2://`, etc.).
@@ -77,9 +73,8 @@ GoidaVpn содержит регулярно обновляемые тексто
 
 | Платформа | Статус | Ссылка |
 | :--- | :---: | :--- |
-| **Android / iOS** | 🟢 Активно | [Просмотр конфигов](./AutoConfigs.txt) |
-| **Windows / macOS / Linux** | 🛠 В разработке | *Временное обслуживание* |
-| **Android TV** | 🛠 В разработке | *~4 сервера заблокировано РКН* |
+| **Android / iOS** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/GoidaVpn_mobile) |
+| **Windows / macOS / Linux** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/AutoConfigs.txt) |
 
 ### 🗂 Структура репозитория
 - `AutoConfigs.txt` / `GoidaVpnList1` — готовые конфигурационные строки (`vless://`, `hysteria2://`), доступные для импорта.
