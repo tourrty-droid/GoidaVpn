@@ -2,11 +2,13 @@ name: Auto Update Configs
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Запуск каждые 30 минут
+    - cron: '*/30 * * * *'
   push:
     branches:
-      - main # Запуск при сохранении файлов
-  workflow_dispatch: # Запуск по кнопке
+      - main
+  workflow_dispatch:
+  repository_dispatch:
+    types: [remote_trigger]
 
 jobs:
   update-configs:
