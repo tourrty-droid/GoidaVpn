@@ -14,21 +14,31 @@
 
 <img width="1082" height="751" alt="image" src="https://github.com/user-attachments/assets/99380c57-961f-41df-a15f-26805e581160" />
 
+
+
 2. Внутри папки data выберите нужный файл конфигурации.
 
 <img width="2023" height="252" alt="image" src="https://github.com/user-attachments/assets/cafddd1c-b3c8-4d0f-b1d2-388dc9cf6f6c" />
+
+
 
 3. В правом верхнем углу панели просмотра файла нажмите кнопку Raw, чтобы открыть чистый текст конфигурации.
 
 <img width="1082" height="795" alt="image" src="https://github.com/user-attachments/assets/5eca4319-9d10-4a56-873e-240e56a48939" />
 
+
+
 4. Скопируйте полученную ссылку из адресной строки браузера или скопируйте весь текст со страницы.
 
 <img width="720" height="200" alt="image" src="https://github.com/user-attachments/assets/4f1d285f-355b-4ff1-90b2-b9d2d593687c" />
 
+
+
 5. Откройте ваш VPN-клиент (v2rayNG, Hiddify, NekoBox), вставьте скопированную raw-ссылку в раздел подписок (или импортируйте текст конфигурации напрямую из буфера обмена) и активируйте подключение.
 
 <img width="729" height="244" alt="image" src="https://github.com/user-attachments/assets/016655a7-725e-42bc-973e-9bbd9a3a7e19" />
+
+
 
 ---
 
@@ -50,6 +60,8 @@
 2. Нажмите кнопку New Issue.
 
 <img width="2118" height="530" alt="image" src="https://github.com/user-attachments/assets/953ac646-7ac0-401b-b957-e87e7138ff6d" />
+
+
 
 3. Опишите проблему, указав используемый клиент (v2rayNG, Hiddify, NekoBox) и текст ошибки из логов (например, Handshake timeout).
 
