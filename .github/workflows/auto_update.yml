@@ -1,0 +1,39 @@
+name: Auto Update Configs
+
+on:
+  schedule:
+    - cron: '0 */3 * * *' # Запуск каждые 3 часа
+  workflow_dispatch: # Позволяет запускать кнопкой вручную
+
+jobs:
+  update-configs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # КРИТИЧЕСКИ ВАЖНО: Разрешает роботу обновлять файлы в вашем репозитории
+
+    steps:
+    - name: Клонирование вашего репозитория
+      uses: actions/checkout@v4
+
+    - name: Настройка Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Установка библиотек
+      run: pip install requests
+
+    - name: Выполнение скрипта
+      run: python merge_configs.py
+
+    - name: Сохранение изменений
+      run: |
+        git config --local user.email "github-actions[bot]@://github.com"
+        git config --local user.name "github-actions[bot]"
+        git add AutoConfigs.txt
+        if ! git diff --staged --quiet; then
+          git commit -m "Обновление ТОП-7 конфигов [skip ci]"
+          git push
+        else
+          echo "Изменений нет. Пропуск."
+        fi
