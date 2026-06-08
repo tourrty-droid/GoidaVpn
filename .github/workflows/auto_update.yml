@@ -37,7 +37,7 @@ jobs:
         git add AutoConfigs.txt
         if [ -d "logs" ]; then git add logs/; fi
         if ! git diff --staged --quiet; then
-          git commit -m " 🚀 Автоматическое обновление 30 минут [skip ci]"
+          git commit -m " 🚀 Автоматическое обновление 30 минут"
           git push
         else
           echo "Изменений в файлах нет. Пропуск коммита."
