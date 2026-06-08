@@ -5,8 +5,8 @@ on:
     - cron: '*/30 * * * *' # Запуск каждые 30 минут
   push:
     branches:
-      - main 
-  workflow_dispatch: 
+      - main # Запуск при сохранении файлов
+  workflow_dispatch: # Запуск по кнопке
 
 jobs:
   update-configs:
@@ -31,14 +31,16 @@ jobs:
 
     - name: Сохранение изменений
       run: |
-        git config --local user.email "41898282+github-actions[bot]@://github.com"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        touch AutoConfigs.txt 
-        git add AutoConfigs.txt
+        
+        # Добавляем папки data и logs в Git
+        if [ -d "data" ]; then git add data/; fi
         if [ -d "logs" ]; then git add logs/; fi
+        
         if ! git diff --staged --quiet; then
-          git commit -m " 🚀 Автоматическое обновление 30 минут"
+          git commit -m "Автообновление"
           git push
         else
-          echo "Изменений в файлах нет. Пропуск коммита."
+          echo "Изменений нет."
         fi
