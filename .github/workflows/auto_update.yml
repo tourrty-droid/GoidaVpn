@@ -39,7 +39,7 @@ jobs:
         if [ -d "logs" ]; then git add logs/; fi
         
         if ! git diff --staged --quiet; then
-          git commit -m "Автообновление"
+          git commit -m "🚀 Автоматическое обновление 30 минут"
           git push
         else
           echo "Изменений нет."
