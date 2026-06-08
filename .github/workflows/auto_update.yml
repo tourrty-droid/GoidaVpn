@@ -3,13 +3,13 @@ name: Auto Update Configs
 on:
   schedule:
     - cron: '0 */3 * * *' # Запуск каждые 3 часа
-  workflow_dispatch: # Позволяет запускать кнопкой вручную
+  workflow_dispatch: # Кнопка ручного запуска
 
 jobs:
   update-configs:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # КРИТИЧЕСКИ ВАЖНО: Разрешает роботу обновлять файлы в вашем репозитории
+      contents: write
 
     steps:
     - name: Клонирование вашего репозитория
@@ -28,12 +28,14 @@ jobs:
 
     - name: Сохранение изменений
       run: |
-        git config --local user.email "github-actions[bot]@://github.com"
+        git config --local user.email "41898282+github-actions[bot]@://github.com"
         git config --local user.name "github-actions[bot]"
+        # Создаем пустой файл, если скрипт его почему-то не создал (защита от ошибки git add)
+        touch AutoConfigs.txt 
         git add AutoConfigs.txt
         if ! git diff --staged --quiet; then
           git commit -m "Обновление ТОП-7 конфигов [skip ci]"
           git push
         else
-          echo "Изменений нет. Пропуск."
+          echo "Изменений в файле нет."
         fi
