@@ -1,6 +1,6 @@
 import os
 import random
-from datetime import datetime
+from datetime import datetime, timedelta
 import requests
 
 # =====================================================================
@@ -13,7 +13,7 @@ VLESS_URL_3 = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russ
 HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/hysteria2.txt"
 # =====================================================================
 
-# НАСТРОЙКА НОВЫХ ПУТЕЙ
+# НАСТРОЙКА ПУТЕЙ
 OUTPUT_DIR = "data"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "GoiVpnAUTO")
 LOGS_DIR = "logs"
@@ -28,7 +28,7 @@ HEADER_TEXT = """# profile-title: GoidaVpn
 COUNTRY_MAP = {
     'NL': ('🇳🇱', 'Нидерланды'), 'US': ('🇺🇸', 'США'), 'DE': ('🇩🇪', 'Германия'),
     'GB': ('🇬🇧', 'Великобритания'), 'UK': ('🇬🇧', 'Великобритания'), 'FR': ('🇫🇷', 'Франция'),
-    'FI': ('🇫ᛁ', 'Финляндия'), 'RU': ('🇷🇺', 'Россия'), 'SG': ('🇸🇬', 'Сингапур'),
+    'FI': ('🇫🇮', 'Финляндия'), 'RU': ('🇷🇺', 'Россия'), 'SG': ('🇸🇬', 'Сингапур'),
     'JP': ('🇯🇵', 'Япония'), 'HK': ('🇭🇰', 'Гонконг'), 'TR': ('🇹🇷', 'Турция'),
     'PL': ('🇵🇱', 'Польша'), 'SE': ('🇸🇪', 'Швеция'), 'CH': ('🇨🇭', 'Швейцария'),
     'KZ': ('🇰🇿', 'Казахстан'), 'UA': ('🇺🇦', 'Украина'), 'BY': ('🇧🇾', 'Беларусь'),
@@ -59,22 +59,43 @@ def manage_logs_and_backup():
     if not os.path.exists(LOGS_DIR):
         os.makedirs(LOGS_DIR)
 
+    # 1. Создаем бэкап с фиксацией точного времени (Часы-Минуты-Секунды)
     if os.path.exists(OUTPUT_FILE) and os.path.getsize(OUTPUT_FILE) > 0:
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         backup_name = os.path.join(LOGS_DIR, f"backup_{current_time}.txt")
         try:
             with open(OUTPUT_FILE, "r", encoding="utf-8") as src, open(backup_name, "w", encoding="utf-8") as dst:
                 dst.write(src.read())
+            print(f"Резервная копия сохранена с точным временем: {backup_name}")
         except Exception as e:
             print(f"⚠️ Не удалось создать бекап: {e}")
 
+    # 2. ОЧИСТКА КАЖДЫЙ ДЕНЬ: Удаляем любые бэкапы, которые старше 24 часов
     try:
-        log_files = [os.path.join(LOGS_DIR, f) for f in os.listdir(LOGS_DIR) if f.startswith("backup_") and f.endswith(".txt")]
-        log_files.sort(key=os.path.getmtime)
-        if len(log_files) > 10:
-            files_to_delete = log_files[:-10]
-            for file_path in files_to_delete:
-                os.remove(file_path)
+        print("Проверка папки логов на наличие файлов старше 24 часов...")
+        now = datetime.now()
+        one_day_ago = now - timedelta(days=1)
+        
+        for filename in os.listdir(LOGS_DIR):
+            file_path = os.path.join(LOGS_DIR, filename)
+            
+            if os.path.isfile(file_path) and filename.startswith("backup_") and filename.endswith(".txt"):
+                try:
+                    # Извлекаем дату и время из имени файла (backup_YYYY-MM-DD_HH-MM-SS.txt)
+                    date_str = filename.replace("backup_", "").replace(".txt", "")
+                    file_date = datetime.strptime(date_str, "%Y-%m-%d_%H-%M-%S")
+                    
+                    # Если файл был создан больше суток назад — удаляем его
+                    if file_date < one_day_ago:
+                        os.remove(file_path)
+                        print(f"🗑️ Срок хранения истек (24ч). Удален лог: {filename}")
+                except ValueError:
+                    # На случай сбоя формата имени проверяем реальное время изменения файла операционной системой
+                    file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
+                    if file_mtime < one_day_ago:
+                        os.remove(file_path)
+                        print(f"🗑️ Удален старый файл по системному времени: {filename}")
+                        
     except Exception as e:
         print(f"⚠️ Ошибка при очистке папки логов: {e}")
 
