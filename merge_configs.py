@@ -15,7 +15,7 @@ HYSTERIA_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-rus
 
 # НАСТРОЙКА НОВЫХ ПУТЕЙ
 OUTPUT_DIR = "data"
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "GoiVpnMirrors.txt")
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "GoiVpnAUTO.txt")
 LOGS_DIR = "logs"
 
 HEADER_TEXT = """# profile-title: GoidaVpn
