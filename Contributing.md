@@ -4,6 +4,8 @@
 
 Перед началом работы, пожалуйста, ознакомьтесь с данным руководством.
 
+## Уствойство
+[Пк](https://github.com/tourrty-droid/GoidaVpn/blob/main/Contributing.md#%D0%BF%D0%BA-%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE)
 ---
 # Пк устройство
 
