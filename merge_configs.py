@@ -2,14 +2,14 @@ import os
 import random
 import requests
 
-# Прямая ссылка (raw) на конфигурации
-RAW_CONFIG_URL = "https://githubusercontent.com"
+# Прямая ссылка (raw) на конфигурации, которую вы указали
+RAW_CONFIG_URL = "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/data/githubmirror/clean/vless.txt"
 OUTPUT_FILE = "AutoConfigs.txt"
 
-# Ваша кастомная шапка
+# Ваша кастомная шапка подписок
 HEADER_TEXT = """# profile-title: GoidaVpn
 # profile-update-interval: 1
-#support-url: https://github.com/tourrty-droid/GoidaVpn
+#support-url: https://github.com
 #announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
 # мяу
 # гав\n\n"""
@@ -33,22 +33,22 @@ def fetch_and_merge():
         if not line:
             continue
             
-        # Сохраняем все строки репозитория на случай форс-мажора
+        # Сохраняем все конфигурации на случай, если фильтр пуст
         all_lines.append(line)
             
         if '#' in line:
             config_parts = line.split('#')
             config_name = config_parts[-1].lower()
             
-            # Проверяем расширенный фильтр
+            # Ищем упоминания youtube или сокращения yt
             if 'youtube' in config_name or 'yt' in config_name:
                 matched_lines.append(line)
 
     print(f"Найдено строго по фильтру YouTube: {len(matched_lines)}")
     
-    # ЗАЩИТА: Если по фильтру ничего не нашлось, берём любые доступные конфигурации
+    # Защита от пустого файла
     if not matched_lines:
-        print("Строк с тегом YouTube не найдено. Берем общую базу.")
+        print("Строк с тегом YouTube не найдено. Используем общую базу.")
         matched_lines = all_lines
 
     if not matched_lines:
