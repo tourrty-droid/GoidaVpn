@@ -35,8 +35,8 @@ The repository features an automated backend driven by `merge_configs.py`. This 
 
 | Platform | Status | Link |
 | :--- | :---: | :--- |
-| **Android / iOS** | 🟢 Active | [View Configs](./AutoConfigs.txt) |
-| **Windows / macOS / Linux** | 🛠 In Development | *Temporary maintenance* |
+| **Android / iOS** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/GoidaVpn_mobile) |
+| **Windows / macOS / Linux** | 🟢 Active | [View Configs] |
 
 ### 🗂 Repository Structure
 - `AutoConfigs.txt` / `GoidaVpnList1` — Text files containing ready-to-use configuration strings (`vless://`, `hysteria2://`, etc.).
