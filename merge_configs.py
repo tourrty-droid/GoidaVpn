@@ -129,9 +129,8 @@ def fetch_and_merge():
     
     send_telegram_message("\n".join(report_lines))
     
+    # ВОТ ЗДЕСЬ БЫЛА ОШИБКА ОТСТУПА, ТЕПЕРЬ ВСЁ ВЕРНО:
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(HEADER_TEXT + "\n".join(beautiful_configs))
     return True
-
-if __name__ == "__main__":
     
