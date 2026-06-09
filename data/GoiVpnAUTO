@@ -1,14 +1,11 @@
 # profile-title: GoidaVpn
 # profile-update-interval: 1
-#support-url: https://github.com/tourrty-droid/GoidaVpn
-#announce: 🟢 GoidaVpn Status: Fine 🟢 После 8:00 РКН блокируют некоторые сервера
-# мяу
-# гав
+# announce: 🟢 GoidaVpn Status: Fine
 
-vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🌐? Неизвестно | Server #1
-vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷 Франция | Server #2
-vless://0dbad6ba-be87-46e1-ab90-30c53ef1878d@188.114.98.0:443?encryption=none&security=tls&sni=drive.speegy.club&alpn=h2&allowInsecure=1&type=xhttp&path=%2Fsreztjsterw4j&mode=auto#🇩🇪 Германия | Server #3
-vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷 Франция | Server #4
-vless://2703cda8-5cf4-019d-c4bd-6cf0c2261946@122.8.44.3:993?encryption=none&flow=xtls-rprx-vision&security=reality&sni=dl.google.com&fp=chrome&pbk=UvQ2HZFkQXrBiaprbcmks-aFo1dvnfPlHXcUKcl-i04&allowInsecure=1&type=tcp&headerType=none&host=dl.google.com#🌐 Неизвестно | Server #5
-vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&allowInsecure=1&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱 Нидерланды | Server #6
-vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇫🇷 Франция | Server #7
+trojan://telegram-id-privatevpns@52.57.204.185:22222?security=tls&sni=trojan.burgerip.co.uk&allowInsecure=1&type=tcp&headerType=none#%E5%BE%B7%E5%9B%BD-YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%912009 | Server #1
+vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#%F0%9F%87%AB%F0%9F%87%B7%20France%20%7C%20YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%91 | Server #2
+vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#%F0%9F%87%AB%F0%9F%87%B7%20France%2C%20YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%91 | Server #3
+hysteria2://rs2mR3g9bZiMloftx6lZQ59Um1Ld@80.66.81.78:9443?sni=tunel1.washing.help&obfs=salamander&obfs-password=oMgvuBy5Lj5kYM57sGsnjpjNcSEQ&insecure=0#%F0%9F%87%B7%F0%9F%87%BARU_%20%20YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%91 | Server #4
+vless://0dbad6ba-be87-46e1-ab90-30c53ef1878d@188.114.98.0:443?encryption=none&security=tls&sni=drive.speegy.club&alpn=h2&allowInsecure=1&type=xhttp&path=%2Fsreztjsterw4j&mode=auto#%F0%9F%87%A9%F0%9F%87%AADE_%20%20YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%91 | Server #5
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#%F0%9F%87%AB%F0%9F%87%B7%20France%2C%20%20%20YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%91 | Server #6
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#%F0%9F%87%AE%F0%9F%87%B9%20Italy%2C%20YouTube%40%E5%B0%8F%E9%9D%92%E7%A7%91%E5%AD%A6%E7%BD%91 | Server #7
