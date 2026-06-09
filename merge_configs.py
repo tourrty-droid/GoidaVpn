@@ -16,7 +16,6 @@ OUTPUT_DIR = "data"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "GoiVpnAUTO")
 LOGS_DIR = "logs"
 
-# Получаем данные для Telegram из скрытых переменных GitHub
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
@@ -37,25 +36,17 @@ COUNTRY_MAP = {
 }
 
 def send_telegram_message(text):
-    """Отправляет сообщение в Telegram, если настроены переменные"""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
-        print("⚠️ Telegram токен или Chat ID не найдены. Уведомление не отправлено.")
         return
-
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": text,
-        "parse_mode": "HTML"
-    }
+    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": text, "parse_mode": "HTML"}
     try:
         requests.post(url, json=payload, timeout=10)
     except Exception as e:
-        print(f"⚠️ Ошибка отправки в Telegram: {e}")
+        print(f"⚠️ Ошибка Telegram: {e}")
 
 def clean_and_rename_config(line, index):
-    if '#' not in line:
-        return line
+    if '#' not in line: return line
     base_part, config_name = line.rsplit('#', 1)
     config_name_upper = config_name.upper()
     flag, country_name = "🌐", "Неизвестно"
@@ -71,13 +62,11 @@ def download_data(url):
         response.raise_for_status()
         return response.text
     except Exception as e:
-        print(f"⚠️ Ошибка при скачивании {url}: {e}")
+        print(f"⚠️ Ошибка скачивания {url}: {e}")
         return ""
 
 def manage_logs_and_backup():
-    if not os.path.exists(LOGS_DIR):
-        os.makedirs(LOGS_DIR)
-
+    if not os.path.exists(LOGS_DIR): os.makedirs(LOGS_DIR)
     if os.path.exists(OUTPUT_FILE) and os.path.getsize(OUTPUT_FILE) > 0:
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         backup_name = os.path.join(LOGS_DIR, f"backup_{current_time}.txt")
@@ -85,73 +74,64 @@ def manage_logs_and_backup():
             with open(OUTPUT_FILE, "r", encoding="utf-8") as src, open(backup_name, "w", encoding="utf-8") as dst:
                 dst.write(src.read())
         except Exception as e:
-            print(f"⚠️ Не удалось создать бекап: {e}")
-
+            print(f"⚠️ Ошибка бэкапа: {e}")
+    
+    # Очистка логов старше 24ч
     try:
         now = datetime.now()
         one_day_ago = now - timedelta(days=1)
         for filename in os.listdir(LOGS_DIR):
             file_path = os.path.join(LOGS_DIR, filename)
-            if os.path.isfile(file_path) and filename.startswith("backup_") and filename.endswith(".txt"):
-                try:
-                    date_str = filename.replace("backup_", "").replace(".txt", "")
-                    file_date = datetime.strptime(date_str, "%Y-%m-%d_%H-%M-%S")
-                    if file_date < one_day_ago:
-                        os.remove(file_path)
-                except ValueError:
-                    file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
-                    if file_mtime < one_day_ago:
-                        os.remove(file_path)
+            if os.path.isfile(file_path) and filename.startswith("backup_"):
+                file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
+                if file_mtime < one_day_ago:
+                    os.remove(file_path)
     except Exception as e:
-        print(f"⚠️ Ошибка при очистке папки логов: {e}")
+        print(f"⚠️ Ошибка очистки логов: {e}")
 
 def fetch_and_merge():
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
-
+    if not os.path.exists(OUTPUT_DIR): os.makedirs(OUTPUT_DIR)
     manage_logs_and_backup()
     
     urls = [VLESS_URL_1, VLESS_URL_2, VLESS_URL_3, HYSTERIA_URL]
     combined_raw_lines = []
-    
     for url in urls:
         data = download_data(url)
-        if data:
-            combined_raw_lines.extend(data.splitlines())
+        if data: combined_raw_lines.extend(data.splitlines())
     
-    matched_lines, all_lines = [], []
+    matched_lines = [line.strip() for line in combined_raw_lines if line.strip() and '#' in line and ('youtube' in line.split('#')[-1].lower() or 'yt' in line.split('#')[-1].lower())]
     
-    for line in combined_raw_lines:
-        line = line.strip()
-        if not line:
-            continue
-        all_lines.append(line)
-        if '#' in line:
-            config_name = line.split('#')[-1].lower()
-            if 'youtube' in config_name or 'yt' in config_name:
-                matched_lines.append(line)
+    if not matched_lines:
+        matched_lines = [line.strip() for line in combined_raw_lines if line.strip()]
 
     if not matched_lines:
-        matched_lines = all_lines
-
-    if not matched_lines:
-        # Отправляем алерт об ошибке
-        send_telegram_message("❌ <b>GoidaVpn: Ошибка!</b>\nВсе источники серверов пусты. Обновление прервано.")
+        send_telegram_message("❌ <b>GoidaVpn: Ошибка!</b>\nВсе источники пусты.")
         return False
 
     random.shuffle(matched_lines)
     top_7_configs = matched_lines[:7]
     beautiful_configs = [clean_and_rename_config(config, i) for i, config in enumerate(top_7_configs, 1)]
     
+    # Расчет задержки и формирование отчета
+    now = datetime.now()
+    seconds_passed = now.minute * 60 + now.second
+    report_lines = [
+        f"✅ <b>GoidaVpn обновлен!</b>", 
+        f"🕒 <b>Время запуска:</b> {now.strftime('%H:%M:%S')}",
+        f"⏱ <b>Задержка:</b> {seconds_passed} сек.",
+        ""
+    ]
+    for i, cfg in enumerate(beautiful_configs, 1):
+        parts = cfg.split('#', 1)
+        name = parts[1] if len(parts) > 1 else "Без названия"
+        link = (parts[0][:35] + "...") if len(parts[0]) > 35 else parts[0]
+        report_lines.append(f"{i}. <b>{name}</b>\n<code>{link}</code>")
+    
+    send_telegram_message("\n".join(report_lines))
+    
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(HEADER_TEXT)
-        for config in beautiful_configs:
-            f.write(config + "\n")
-            
-    # Отправляем сообщение об успешном обновлении
-    send_telegram_message(f"✅ <b>GoidaVpn обновлен!</b>\nЗаписано свежих серверов: {len(beautiful_configs)}")
+        f.write(HEADER_TEXT + "\n".join(beautiful_configs))
     return True
 
 if __name__ == "__main__":
-    fetch_and_merge()
     
