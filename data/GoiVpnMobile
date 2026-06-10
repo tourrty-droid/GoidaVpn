@@ -1,15 +1,20 @@
 # profile-title: GoidaVpn
 # profile-update-interval: 1
 #support-url: https://github.com/tourrty-droid/GoidaVpn
-#announce: 🟢 GoidaVpn Status: Fine 🟢
-# мяу
-# гав
+#announce: ℹ️ GoidaVpn
+⚠️ Для стабильной работы берите сервер #1 (Германия)
+🔷 Ркн иногда блокирует сервера с 8:00 по 14:00
 
-vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Vless ↓
-vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🇮🇹🌐 Италия (Ютуб без рекламы)
-vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🇮🇹🌐 Италия (Резерв)
-vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&allowInsecure=1&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱🌐 Нидерланды
-vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱🌐 Нидерланды (Резерв)
-vless://InternetAzadRobot@146.75.117.91:80?encryption=none&security=none&type=xhttp&host=tignaltofansv4.global.ssl.fastly.net&path=%2FTignal&mode=auto#🇫🇷🌐 Франция [⚡⚡] (Ютуб без рекламы)
-vless://a2415a1-9823-9828d3ceb818@7676767676767676737252525271817262424262627276.18.179:443?type=tcp&security=reality&pbk=8xufuXmVTmxmM9SKIN1P6x3CFstZdl1mfSxr_LfOkDQ&fp=firefox&sni=www.ya.ru&sid=2af15d98#Hysteria2 ↓ 
-hysteria2://e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2@185.227.108.195:11000/?sni=de-node.farnet.top#🇩🇪🌐 [⚡] Германия (Ютуб с рекламой)
+
+vless://InternetAzadRobot@151.101.128.223:80?encryption=none&security=none&type=xhttp&host=shangulin.global.ssl.fastly.net&path=%2Flogin&mode=auto&extra=%7B%22mode%22%3A%22auto%22%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D#🇷🇺#1 Россия | Обход глушилок
+hysteria2://rs2mR3g9bZiMloftx6lZQ59Um1Ld@80.66.81.78:9443?sni=tunel1.washing.help&obfs=salamander&obfs-password=oMgvuBy5Lj5kYM57sGsnjpjNcSEQ&insecure=0#🇷🇺#2 Россия | Обход глушилок
+vless://7b241232-208d-4d36-857e-913f91b044f4@193.111.248.101:443?alpn=h2&encryption=none&flow=xtls-rprx-vision&fp=edge&security=tls&sni=api-6a20f558.noooo.win&type=tcp#🇷🇺#3 Россия| Обход глушилок
+vless://Obichy-ServerA-Razdeliteryl@15863.53.2726:228?alpn=h2&encryption=none&flow=xtls-rprx-vision&fp=edge&security=tls&sni=api-6a20f558.noooo.win&type=tcp#⬇️ Обычые сервера (Vless, Hs2, Trojan)
+hysteria2://e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2@185.227.108.195:11000/?sni=de-node.farnet.top#🇩🇪#1 Германия | Hs2, TLS 
+vless://512f01f4-d8fc-4a78-96a0-5d9ebebe35b9@bypass.de-dp-01.com:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=storage.yandex.net&fp=firefox&pbk=ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo&sid=5be97fb85093a3a9&flow=xtls-rprx-vision#🇩🇪#2 Германия| Reality
+vless://dbaf0b78-9dfe-4ed0-b60a-e701562ac55e@pl-dp-01.online:8443?type=tcp&headerType=none&security=reality&encryption=none&sni=storage.yandex.net&fp=firefox&pbk=9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8&sid=d2c6d9f6e6e12bfe&flow=xtls-rprx-vision#🇵🇱#3 Польша | Reality
+vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&allowInsecure=1&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱#4 Нидерланды |Reality
+vless://InternetAzadRobot@fastly.com:80?encryption=none&security=none&type=xhttp&host=sv6tignal.global.ssl.fastly.net&path=%2Ftofan&mode=auto&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D#🇮🇹#5 Италия | none
+vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&allowInsecure=1&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱#6 Нидерланды | Reality
+vless://82d47c52-9738-4d40-93a4-220bab575c60@treng.loralden.com:443?encryption=none&security=reality&sni=treng.loralden.com&fp=firefox&pbk=EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k&sid=ed72a429f0135a3f&type=grpc&authority=&serviceName=grpc&mode=gun#🇳🇱#7 Нидерланды (Резерв) | Reality
+trojan://S8wG5SmFw5wVDeLG4K2N6Mqr2mSPjrpBd7QCHcK4F8fYRfiN@usa2.bw8848.org:443/?type=ws&host=usa2.bw8848.org&path=%2Fusa2-usa2-yuyv2d&security=tls&sni=usa2.bw8848.org#🇺🇸#8 Соединёные Штаты | TLS
