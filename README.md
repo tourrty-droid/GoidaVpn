@@ -1,5 +1,9 @@
 # GoidaVpn
 
+<p align="center">
+  <img src="Files/Icons/README_flies/logo.png" width="350" alt="Logo">
+</p>
+
 > **Your path to a free life / Ваш путь к свободной жизни.**
 
 ---
