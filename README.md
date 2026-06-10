@@ -31,7 +31,7 @@ The repository features an automated backend driven by `merge_configs.py`. This 
 
 | Platform | Status | Link |
 | :--- | :---: | :--- |
-| **Android / iOS** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnMobile) |
+| **Android / iOS** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnMobile?token=GHSAT0AAAAAAD6GC2PXD4U5XGJZ3TMJUVOI2RJDXWQ) |
 | **Windows / macOS / Linux** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnAUTO) |
 
 ### 🗂 Repository Structure
@@ -73,7 +73,7 @@ GoidaVpn содержит регулярно обновляемые тексто
 
 | Платформа | Статус | Ссылка |
 | :--- | :---: | :--- |
-| **Android / iOS** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnMobile) |
+| **Android / iOS** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnMobile?token=GHSAT0AAAAAAD6GC2PXD4U5XGJZ3TMJUVOI2RJDXWQ) |
 | **Windows / macOS / Linux** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnAUTO) |
 
 ### 🗂 Структура репозитория
