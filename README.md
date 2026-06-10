@@ -1,4 +1,4 @@
-# GoidaVpn
+# GitVpn
 
 <p align="center">
   <img src="Files/Icons/README_flies/logo.png" width="350" alt="Logo">
@@ -18,10 +18,8 @@
 # English
 
 ### 🎯 About
-GoidaVpn provides regularly updated text configurations for bypassing internet restrictions. The repository contains valid URI-addresses for popular VPN clients supporting Xray/V2Ray protocols.
+GitVpn provides regularly updated text configurations for bypassing internet restrictions. The repository contains valid URI-addresses for popular VPN clients supporting Xray/V2Ray protocols.
 
-### ⚡ Auto-Update & Core Script
-The repository features an automated backend driven by `merge_configs.py`. This script automatically fetches, validates, and merges configuration files into production lists (`AutoConfigs.txt`, `GoidaVpnList1`), ensuring that your subscription nodes are always fresh and functional without manual intervention.
 
 ### ✨ Features
 - 🔄 **Regularly Updated** - Configurations updated automatically via Python actions to maintain reliability.
@@ -45,7 +43,7 @@ The repository features an automated backend driven by `merge_configs.py`. This 
 ### 🚀 Quick Start Guide
 
 #### Method 1: Direct Import (Copy-Paste)
-1. Open `AutoConfigs.txt` or `GoidaVpnList1` in this repository.
+1. Open `GoidaVpnAUTO` or `GoidaVpn_Mobils` in this repository.
 2. Copy one or multiple configuration lines.
 3. Open your VPN client (**v2rayNG**, **Hiddify**, or **NekoBox**).
 4. Select **"Import profiles from clipboard"**.
@@ -61,10 +59,8 @@ The repository features an automated backend driven by `merge_configs.py`. This 
 # Русский
 
 ### 🎯 О проекте
-GoidaVpn содержит регулярно обновляемые текстовые конфигурации для обхода интернет-ограничений. Репозиторий содержит валидные URI-адреса для популярных VPN-клиентов с поддержкой протоколов Xray/V2Ray.
+GitVpn содержит регулярно обновляемые текстовые конфигурации для обхода интернет-ограничений. Репозиторий содержит валидные URI-адреса для популярных VPN-клиентов с поддержкой протоколов Xray/V2Ray.
 
-### ⚡ Автообновление и скрипт слияния
-Главная особенность репозитория — полная автоматизация. Скрипт `merge_configs.py` автоматически собирает, фильтрует и объединяет конфигурации рабочих серверов в файлы списков (`AutoConfigs.txt`, `GoidaVpnList1`). Это гарантирует актуальность подписок без необходимости ручного обновления со стороны разработчика.
 
 ### ✨ Возможности
 - 🔄 **Регулярное обновление** - Конфигурации генерируются автоматически для обеспечения стабильной связи.
@@ -80,14 +76,11 @@ GoidaVpn содержит регулярно обновляемые тексто
 | **Android / iOS** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnMobile?token=GHSAT0AAAAAAD6GC2PXD4U5XGJZ3TMJUVOI2RJDXWQ) |
 | **Windows / macOS / Linux** | 🟢 Активно | [Просмотр конфигов](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnAUTO) |
 
-### 🗂 Структура репозитория
-- `AutoConfigs.txt` / `GoidaVpnList1` — готовые конфигурационные строки (`vless://`, `hysteria2://`), доступные для импорта.
-- `merge_configs.py` — Python-скрипт, отвечающий за парсинг и автообновление серверов.
 
 ### 🚀 Инструкция по использованию
 
 #### Вариант 1: Прямой импорт строк (из буфера обмена)
-1. Откройте файл `AutoConfigs.txt` в корне этого репозитория.
+1. Откройте файл `GoidaVpn_Mobile` в корне этого репозитория.
 2. Скопируйте одну или несколько строк конфигурации.
 3. В VPN-клиенте (**v2rayNG**, **Hiddify**, **NekoBox**) выберите **«Импорт профилей из буфера обмена»**.
 
@@ -108,4 +101,4 @@ GoidaVpn содержит регулярно обновляемые тексто
 - [AvenCores/goida-vpn-configs](https://github.com)
 
 ### 📝 Лицензия & Дисклеймер
-Проект распространяется по лицензии **MIT**. Проект создан исключительно в образовательных целях.
+Проект распространяется по лицензии. Проект создан исключительно в образовательных целях.
