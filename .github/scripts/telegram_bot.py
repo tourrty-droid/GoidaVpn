@@ -128,7 +128,7 @@ def format_push_message(data: Dict) -> Optional[str]:
         commit_list += f"\n<i>...и ещё {len(commits) - 5} коммитов</i>"
 
     return f"""
-🔄 <b>Обновление кода</b>
+💻 <b>Обновление кода</b>
 
 <b>Ветка:</b> <code>{branch}</code>
 <b>Коммитов:</b> {len(commits)}
