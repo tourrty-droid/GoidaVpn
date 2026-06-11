@@ -88,7 +88,7 @@ GitVpn содержит регулярно обновляемые текстов
 
 | Способ | Куда |
 | :--- | :--- |
-| 📢 Telegram-канал | *Скоро* |
+| 📢 Telegram-канал | [Подписаться](https://t.me/gitvpnupdatesss) |
 | 📰 RSS релизов GitHub | [Подписаться](https://github.com/tourrty-droid/GoidaVpn/releases.atom) |
 | ⭐ Star на GitLab | Следите за обновлениями в ленте |
 
