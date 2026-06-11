@@ -74,7 +74,7 @@ def format_release_message(data: Dict) -> str:
 <b>Изменения:</b>
 {body}
 
-🔗 <a href="{url}">Скачать на GitHub</a>
+🔗 <a href="{url}">GitHub</a>
     """.strip()
 
 def format_issue_message(data: Dict) -> Optional[str]:
