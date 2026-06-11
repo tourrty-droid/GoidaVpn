@@ -74,7 +74,7 @@ GitVpn содержит регулярно обновляемые текстов
 | :---: | :--- | :--- | :---: | :---: |
 | <img src="https://img.shields.io/badge/GitLab-FCA121?style=flat&logo=gitlab&logoColor=white" alt="GitLab" width="70"> | **Основной** | [tourrty-droid/GoidaVpn](https://gitlab.com/tourrty-droid/GoidaVpn) | [Скачать](https://gitlab.com/tourrty-droid/GoidaVpn/-/releases) | 🟢 Синхронизировано |
 | <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" width="70"> | Зеркало | [tourrty-droid/GoidaVpn](https://github.com/tourrty-droid/GoidaVpn) | [Скачать](https://github.com/tourrty-droid/GoidaVpn/releases) | 🟢 Синхронизировано |
-| <img src="https://img.shields.io/badge/Codeberg-2185D0?style=flat&logo=codeberg&logoColor=white" alt="Codeberg" width="80"> | Зеркало | [tourrty-droid/GoidaVpn](https://codeberg.org/tourrty-droid/GoidaVpn) | [Скачать](https://codeberg.org/tourrty-droid/GoidaVpn/releases) | 🟢 Синхронизировано |
+| <img src="https://img.shields.io/badge/Codeberg-2185D0?style=flat&logo=codeberg&logoColor=white" alt="Codeberg" width="80"> | Зеркало | [tourrty-droid/GoidaVpn](https://codeberg.org/tourrty-droid/GoidaVpn) | [Перейти](https://codeberg.org/tourrty-droid/GoidaVpn/releases) | 🟢 Синхронизировано |
 
 ### ⏳ В планах
 
