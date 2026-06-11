@@ -1,0 +1,52 @@
+name: 📢 Telegram Notifications
+
+on:
+  # Релизы
+  release:
+    types: [published, prereleased]
+  
+  # Критические issues
+  issues:
+    types: [opened, labeled]
+  
+  # Пуш в ветки (синхронизация зеркал)
+  push:
+    branches: [main, master]
+  
+  # Ошибки в других workflow
+  workflow_run:
+    workflows: ["*"]
+    types:
+      - completed
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    # Не отправляем если workflow завершился успешно (кроме явных событий)
+    if: |
+      github.event_name != 'workflow_run' || 
+      github.event.workflow_run.conclusion == 'failure'
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: 📦 Install dependencies
+        run: pip install requests
+      
+      - name: 📢 Send Telegram Notification
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_WORKFLOW: ${{ github.workflow }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: python .github/scripts/telegram_bot.py
