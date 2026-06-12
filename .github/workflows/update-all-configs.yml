@@ -1,0 +1,73 @@
+name: Автообновление VLESS и Trojan конфигов
+
+on:
+  schedule:
+    # Запуск каждые 15 минут
+    - cron: '*/15 * * * *'
+  workflow_dispatch:  # Ручной запуск
+
+jobs:
+  update_all_configs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Клонирование репозитория
+        uses: actions/checkout@v4
+
+      - name: Подготовка структуры директорий
+        run: |
+          echo "🔄 Подготовка структуры директорий..."
+          
+          # Удаляем проблемные файлы (если есть)
+          rm -f data/Githubmirror/vless 2>/dev/null || true
+          rm -f data/Githubmirror/trojan 2>/dev/null || true
+          
+          # Создаем директории
+          mkdir -p data/Githubmirror/vless/
+          mkdir -p data/Githubmirror/trojan/
+          
+          echo "✅ Структура готова"
+          ls -la data/Githubmirror/
+
+      - name: Установка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Установка зависимостей
+        run: |
+          pip install requests
+          echo "✅ Зависимости установлены"
+
+      - name: Обновление VLESS конфигов
+        run: |
+          echo "🔄 Обновление VLESS конфигов..."
+          python update_configs.py
+          echo "✅ VLESS обновлен"
+
+      - name: Обновление Trojan конфигов
+        run: |
+          echo "🔄 Обновление Trojan конфигов..."
+          python update_trojan_configs.py
+          echo "✅ Trojan обновлен"
+
+      - name: Отправка изменений в репозиторий
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Добавляем все изменения
+          git add -A
+          
+          # Проверяем, есть ли изменения
+          if git diff --cached --quiet; then
+            echo "ℹ️ Нет изменений для коммита"
+          else
+            # Показываем что изменилось
+            git status
+            git commit -m "🔄 Auto-update: VLESS & Trojan ($(date +'%Y-%m-%d %H:%M:%S'))"
+            git push
+            echo "✅ Конфиги обновлены и отправлены в репозиторий"
+          fi
