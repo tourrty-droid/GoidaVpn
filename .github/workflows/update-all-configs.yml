@@ -2,7 +2,7 @@ name: Автообновление VLESS и Trojan (каждые 2 часа)
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # Каждые 2 часа (в 00:00, 02:00, 04:00 и т.д.)
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,10 +14,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Подготовка структуры (удаление файлов-помех)
+        run: |
+          # Если есть файл Vless — удаляем
+          if [ -f "data/Githubmirror/Vless" ]; then
+            rm -f data/Githubmirror/Vless
+            echo "Удалён файл-помеха data/Githubmirror/Vless"
+          fi
+          # Если есть файл trojan — удаляем
+          if [ -f "data/Githubmirror/trojan" ]; then
+            rm -f data/Githubmirror/trojan
+            echo "Удалён файл-помеха data/Githubmirror/trojan"
+          fi
+          # Создаём чистые директории
+          mkdir -p data/Githubmirror/Vless/
+          mkdir -p data/Githubmirror/trojan/
+
       - name: Полная замена VLESS конфигов (из двух источников)
         run: |
-          mkdir -p data/Githubmirror/Vless/
-          
           # Полностью перезаписываем файл новыми конфигами
           echo "# Source 1: github.com/kort0881" > data/Githubmirror/Vless/vless.txt
           curl -s https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt >> data/Githubmirror/Vless/vless.txt
@@ -30,9 +44,6 @@ jobs:
 
       - name: Полная замена Trojan конфигов
         run: |
-          mkdir -p data/Githubmirror/trojan/
-          
-          # Полностью перезаписываем файл новыми конфигами
           curl -s -o data/Githubmirror/trojan/trojan.txt \
             https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/trojan.txt
           echo "✅ Trojan обновлен. Размер: $(wc -c < data/Githubmirror/trojan/trojan.txt) байт"
