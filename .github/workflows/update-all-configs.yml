@@ -14,45 +14,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Подготовка структуры (удаление файлов-помех)
+      - name: Подготовка структуры
         run: |
-          # Если есть файл Vless — удаляем
-          if [ -f "data/Githubmirror/Vless" ]; then
-            rm -f data/Githubmirror/Vless
-            echo "Удалён файл-помеха data/Githubmirror/Vless"
-          fi
-          # Если есть файл trojan — удаляем
-          if [ -f "data/Githubmirror/trojan" ]; then
-            rm -f data/Githubmirror/trojan
-            echo "Удалён файл-помеха data/Githubmirror/trojan"
-          fi
-          # Создаём чистые директории
-          mkdir -p data/Githubmirror/Vless/
-          mkdir -p data/Githubmirror/trojan/
+          rm -f data/Githubmirror/Vless
+          rm -f data/Githubmirror/trojan
+          mkdir -p data/Githubmirror/Vless
+          mkdir -p data/Githubmirror/trojan
+          echo "✅ Директории созданы"
 
-      - name: Полная замена VLESS конфигов (из двух источников)
+      - name: Полная замена VLESS конфигов
         run: |
-          # Полностью перезаписываем файл новыми конфигами
+          set +e  # временно отключаем exit on error
           echo "# Source 1: github.com/kort0881" > data/Githubmirror/Vless/vless.txt
           curl -s https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt >> data/Githubmirror/Vless/vless.txt
-          
+          if [ $? -ne 0 ]; then echo "⚠️ Ошибка загрузки source 1" >> data/Githubmirror/Vless/vless.txt; fi
+
           echo "" >> data/Githubmirror/Vless/vless.txt
-          echo "# Source 2: github.com/igareck (White Lists)" >> data/Githubmirror/Vless/vless.txt
+          echo "# Source 2: github.com/igareck" >> data/Githubmirror/Vless/vless.txt
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt | grep '^vless://' >> data/Githubmirror/Vless/vless.txt
-          
-          echo "✅ VLESS обновлен. Строк: $(wc -l < data/Githubmirror/Vless/vless.txt)"
+          if [ $? -ne 0 ]; then echo "# Нет vless конфигов в source 2" >> data/Githubmirror/Vless/vless.txt; fi
+
+          set -e
+          echo "✅ VLESS сохранён. Строк: $(wc -l < data/Githubmirror/Vless/vless.txt)"
 
       - name: Полная замена Trojan конфигов
         run: |
           curl -s -o data/Githubmirror/trojan/trojan.txt \
             https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/trojan.txt
-          echo "✅ Trojan обновлен. Размер: $(wc -c < data/Githubmirror/trojan/trojan.txt) байт"
+          echo "✅ Trojan сохранён. Размер: $(wc -c < data/Githubmirror/trojan/trojan.txt) байт"
 
-      - name: Принудительный коммит и пуш
+      - name: Коммит и пуш
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
-          git commit -m "🔄 Force update: VLESS & Trojan ($(date '+%Y-%m-%d %H:%M:%S'))"
-          git push
-          echo "✅ Новые конфиги записаны и отправлены"
+          git commit -m "🔄 Force update: VLESS & Trojan ($(date '+%Y-%m-%d %H:%M:%S'))" || echo "Коммит не нужен"
+          git push || echo "Пуш не выполнен"
