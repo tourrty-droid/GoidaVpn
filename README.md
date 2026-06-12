@@ -37,13 +37,12 @@ GitVpn provides regularly updated text configurations for bypassing internet res
 | **Windows / macOS / Linux** | 🟢 Active | [View Configs](https://raw.githubusercontent.com/tourrty-droid/GoidaVpn/refs/heads/main/data/GoiVpnAUTO) |
 
 ### 🗂 Repository Structure
-- `AutoConfigs.txt` / `GoidaVpnList1` — Text files containing ready-to-use configuration strings (`vless://`, `hysteria2://`, etc.).
-- `merge_configs.py` — The automation script responsible for keeping the server base updated.
+- `GitVpnPc` / `GoidaVpn_Mobile` — Text files containing ready-to-use configuration strings (`vless://`, `hysteria2://`, etc.).
 
 ### 🚀 Quick Start Guide
 
 #### Method 1: Direct Import (Copy-Paste)
-1. Open `GoidaVpnAUTO` or `GoidaVpn_Mobils` in this repository.
+1. Open `GitVpnPc` or `GoidaVpn_Mobile` in this repository.
 2. Copy one or multiple configuration lines.
 3. Open your VPN client (**v2rayNG**, **Hiddify**, or **NekoBox**).
 4. Select **"Import profiles from clipboard"**.
@@ -135,7 +134,6 @@ GitVpn содержит регулярно обновляемые текстов
 Файл | SHA256 | Дата
 ---|---|---
 `GoidaVpn_mobile` | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` | 2026-06-12
-`AutoConfigs.txt` | `a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5` | 2026-06-12
 
 ---
 
