@@ -15,6 +15,16 @@
 
 ---
 
+## Поддержать автора
+<p align="center">
+  <img src="Files/Icons/README_flies/a202bbdc52bf02229cbedf2ffc014b3e.gif" width="350" alt="sssso">
+</p>
+
+
+
+
+
+--- 
 # English
 
 ### 🎯 About
