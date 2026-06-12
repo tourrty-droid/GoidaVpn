@@ -1,8 +1,8 @@
-name: Автообновление VLESS и Trojan (каждые 15 минут)
+name: Автообновление VLESS и Trojan (каждые 2 часа)
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 */2 * * *'   # Каждые 2 часа (в 00:00, 02:00, 04:00 и т.д.)
   workflow_dispatch:
 
 jobs:
@@ -14,36 +14,34 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Обновление VLESS конфигов (из двух источников)
+      - name: Полная замена VLESS конфигов (из двух источников)
         run: |
-          mkdir -p data/Githubmirror/vless/
-          rm -f data/Githubmirror/vless/vless.txt
+          mkdir -p data/Githubmirror/Vless/
           
-          echo "# Source 1: github.com/kort0881" >> data/Githubmirror/vless/vless.txt
-          curl -s https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt >> data/Githubmirror/vless/vless.txt
+          # Полностью перезаписываем файл новыми конфигами
+          echo "# Source 1: github.com/kort0881" > data/Githubmirror/Vless/vless.txt
+          curl -s https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt >> data/Githubmirror/Vless/vless.txt
           
-          echo "" >> data/Githubmirror/vless/vless.txt
-          echo "# Source 2: github.com/igareck (White Lists)" >> data/Githubmirror/vless/vless.txt
-          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt | grep '^vless://' >> data/Githubmirror/vless/vless.txt
+          echo "" >> data/Githubmirror/Vless/vless.txt
+          echo "# Source 2: github.com/igareck (White Lists)" >> data/Githubmirror/Vless/vless.txt
+          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt | grep '^vless://' >> data/Githubmirror/Vless/vless.txt
           
-          echo "✅ VLESS обновлен. Количество строк: $(wc -l < data/Githubmirror/vless/vless.txt)"
+          echo "✅ VLESS обновлен. Строк: $(wc -l < data/Githubmirror/Vless/vless.txt)"
 
-      - name: Обновление Trojan конфигов
+      - name: Полная замена Trojan конфигов
         run: |
           mkdir -p data/Githubmirror/trojan/
+          
+          # Полностью перезаписываем файл новыми конфигами
           curl -s -o data/Githubmirror/trojan/trojan.txt \
             https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/trojan.txt
           echo "✅ Trojan обновлен. Размер: $(wc -c < data/Githubmirror/trojan/trojan.txt) байт"
 
-      - name: Отправка изменений в репозиторий
+      - name: Принудительный коммит и пуш
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add -A
-          if git diff --cached --quiet; then
-            echo "Нет изменений"
-          else
-            git commit -m "🔄 Auto-update: VLESS (2 sources) & Trojan ($(date '+%Y-%m-%d %H:%M:%S'))"
-            git push
-            echo "✅ Обновлено"
-          fi
+          git commit -m "🔄 Force update: VLESS & Trojan ($(date '+%Y-%m-%d %H:%M:%S'))"
+          git push
+          echo "✅ Новые конфиги записаны и отправлены"
