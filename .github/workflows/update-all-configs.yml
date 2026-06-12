@@ -16,26 +16,16 @@ jobs:
 
       - name: Обновление VLESS конфигов (из двух источников)
         run: |
-          # Создаём временный файл для сбора всех VLESS-ссылок
           mkdir -p data/Githubmirror/vless/
-          touch all_vless_temp.txt
-
-          # Скачиваем первый источник и добавляем в общий файл
-          echo "# Source 1: github.com/kort0881" >> all_vless_temp.txt
-          curl -s https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt >> all_vless_temp.txt
-
-          # Добавляем разделитель для наглядности
-          echo "" >> all_vless_temp.txt
-          echo "# Source 2: github.com/igareck (White Lists)" >> all_vless_temp.txt
-
-          # Скачиваем второй источник и добавляем в общий файл
-          # Используем grep, чтобы отфильтровать только строки, начинающиеся на vless://
-          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt | grep '^vless://' >> all_vless_temp.txt
-
-          # Удаляем возможные пустые строки и сохраняем финальный файл
-          sed -i '/^$/d' all_vless_temp.txt
-          mv all_vless_temp.txt data/Githubmirror/vless/vless.txt
-
+          rm -f data/Githubmirror/vless/vless.txt
+          
+          echo "# Source 1: github.com/kort0881" >> data/Githubmirror/vless/vless.txt
+          curl -s https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/main/data/githubmirror/clean/vless.txt >> data/Githubmirror/vless/vless.txt
+          
+          echo "" >> data/Githubmirror/vless/vless.txt
+          echo "# Source 2: github.com/igareck (White Lists)" >> data/Githubmirror/vless/vless.txt
+          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt | grep '^vless://' >> data/Githubmirror/vless/vless.txt
+          
           echo "✅ VLESS обновлен. Количество строк: $(wc -l < data/Githubmirror/vless/vless.txt)"
 
       - name: Обновление Trojan конфигов
@@ -56,4 +46,4 @@ jobs:
             git commit -m "🔄 Auto-update: VLESS (2 sources) & Trojan ($(date '+%Y-%m-%d %H:%M:%S'))"
             git push
             echo "✅ Обновлено"
-          end 
+          fi
