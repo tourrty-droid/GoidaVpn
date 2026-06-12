@@ -75,6 +75,7 @@ GitVpn содержит регулярно обновляемые текстов
 | <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub" width="70"> | **Основной** | [tourrty-droid/GoidaVpn](https://github.com/tourrty-droid/GoidaVpn) | [Скачать](https://github.com/tourrty-droid/GoidaVpn/releases) | 🟢 Синхронизировано |
 | <img src="https://img.shields.io/badge/Codeberg-2185D0?style=flat&logo=codeberg&logoColor=white" alt="Codeberg" width="80"> | Зеркало | [tourrty-droid/GoidaVpn](https://codeberg.org/tourrty-droid/GoidaVpn) | [Перейти](https://codeberg.org/tourrty-droid/GoidaVpn/releases) | 🟢 Синхронизировано |
 | <img src="https://img.shields.io/badge/Gitea-609926?style=flat&logo=gitea&logoColor=white" alt="Gitea" width="60"> | Зеркало | [tourrty-droid/GoidaVpn](https://gitea.com/tourrty-droid/GoidaVpn)  | [Перейти](https://gitea.com/tourrty-droid/GoidaVpn/releases) | 🟢 Синхронизировано |
+| <img src="https://img.shields.io/badge/Яндекс-FC3F1D?style=flat&logo=yandex&logoColor=white" alt="Яндекс" width="90"> | Зеркало | [Переводчик](https://inlnk.ru/MjPLpd) | Их нету:) | 🟢 Синхронизировано |
 
 
 ### ⏳ В планах
